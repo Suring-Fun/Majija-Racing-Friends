@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19e7033f8acf1ca957b73279540199, type: 3}
+  m_Name: PuddlePrizeCreator
+  m_EditorClassIdentifier: 
+  ProbabilityFromLastToFirst:
+  - 0
+  - 1
+  - 3
+  - 2
+  - 1
+  - 0
+  m_icons:
+  - {fileID: 21300000, guid: 7861017c452e1475cbe2e5efa5f8ced7, type: 3}
+  <OilBulletPrefab>k__BackingField: {fileID: 4371266203452396067, guid: c637d815b3937015ea96230949b01807, type: 3}
+  <Count>k__BackingField: 3
+  <MinDistance>k__BackingField: 5
+  <MaxDistance>k__BackingField: 10
+  <FlyDuration>k__BackingField: 0.1
