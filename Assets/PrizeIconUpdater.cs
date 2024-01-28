@@ -17,7 +17,7 @@ public class PrizeIconUpdater : MonoBehaviour
 
     private void Awake()
     {
-        m_host = GetComponent<PrizeHost>();
+        m_host = GetComponentInParent<PrizeHost>();
 
     }
 

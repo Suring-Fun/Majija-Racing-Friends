@@ -78,7 +78,7 @@ public class AimAIAction<T> : AIAction
 
                 if (d < Radius && d < distance)
                 {
-                    d = distance;
+                    distance = d;
                     direction = new Vector2(
                         Vector2.Dot(Car.right, globalDirection),
                         Vector2.Dot(Car.up, globalDirection)
@@ -101,7 +101,7 @@ public class AimAIAction<T> : AIAction
 
                 if (float.IsFinite(_01))
                 {
-                    _01 = distance / _01;
+                    _01 = Mathf.Clamp01(distance / _01);
                     direction *= _01;
                 }
             }

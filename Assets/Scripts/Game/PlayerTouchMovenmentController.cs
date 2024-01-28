@@ -13,7 +13,7 @@ public class PlayerTouchMovenmentController : MonoBehaviour
 
     void Awake()
     {
-        m = GetComponent<Movenment>();
+        m = GetComponentInParent<Movenment>();
         m_movenmentStick = Stick.gameObject.AddComponent<StickFetch>();
         m_movenmentStick.Radius = StickRadius;
         m_movenmentStick.Mult = Vector2.right;

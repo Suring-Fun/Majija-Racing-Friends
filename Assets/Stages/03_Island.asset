@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
+  m_Name: 03_Island
+  m_EditorClassIdentifier: 
+  <Cover>k__BackingField: {fileID: 21300000, guid: ebb991da377b4be67a10a5dcddc0c211, type: 3}
+  <StageName>k__BackingField: {fileID: 11400000, guid: cf99a8f85f409c54b85e20596e1f8cea, type: 2}
+  <SceneName>k__BackingField: 02_Island
+  <LevelRequired>k__BackingField: 0
+  <SpritesOfCharacter>k__BackingField:
+  - {fileID: 21300000, guid: a374cc581fcf9f234948c7c50a5a99ed, type: 3}

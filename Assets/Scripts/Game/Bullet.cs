@@ -7,9 +7,7 @@ public class Bullet : MonoBehaviour
     public float Speed { get; private set; }
 
     private Rigidbody2D m_rigidbody;
-    private Vector2 m_direction;
-    private Vector2 m_addSpeed;
-
+    private Vector2 m_totalVelocity;
 
 
     private void Awake()
@@ -19,9 +17,12 @@ public class Bullet : MonoBehaviour
 
     public void Init(Vector2 direction, Vector2 additionalSpeed, float speed)
     {
-        m_direction = direction;
-        m_addSpeed = additionalSpeed;
+        m_totalVelocity = direction * speed + additionalSpeed;
         Speed = speed;
+
+        if(m_totalVelocity.magnitude < Speed) {
+            m_totalVelocity = direction * Speed;
+        }
 
         if (Lifetime > 0f)
             Destroy(gameObject, Lifetime);
@@ -29,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_rigidbody.velocity = m_direction * Speed + m_addSpeed;
+        m_rigidbody.velocity = m_totalVelocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision2D)

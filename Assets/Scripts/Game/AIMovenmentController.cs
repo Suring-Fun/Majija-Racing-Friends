@@ -25,7 +25,7 @@ public class AIMovenmentController : MonoBehaviour
 
     private void Awake()
     {
-        Movenment = GetComponent<Movenment>();
+        Movenment = GetComponentInParent<Movenment>();
         m_posChangeSpeed = Random.Range(PosMinChangeSpeed, PosMaxChangeSpeed) * (Random.value > 0.5f ? -1f: +1f);
         m_posChangeOffset = PositionAtTheRoad;
     }

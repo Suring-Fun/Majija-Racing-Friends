@@ -54,7 +54,7 @@ public class PlayerTouchPrizeController : MonoBehaviour
 
     private void Awake()
     {
-        m_host = GetComponent<PrizeHost>();
+        m_host = GetComponentInParent<PrizeHost>();
         m_stickFetch = StickRoot.AddComponent<StickFetch>();
         m_stickFetch.Radius = StickRadius;
 

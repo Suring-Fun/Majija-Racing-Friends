@@ -18,7 +18,8 @@ public class AIPrizeController : MonoBehaviour
 
     void Start()
     {
-        (Host = GetComponent<PrizeHost>()).PrizeChanged += PH;
+        (Host = GetComponentInParent<PrizeHost>()).PrizeChanged += PH;
+        PH(Host);
     }
 
     private void PH(PrizeHost host)

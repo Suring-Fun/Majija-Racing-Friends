@@ -4,13 +4,15 @@ public class GameWinCondition : MonoBehaviour
 {
     public (int my, int total)? Place { get; private set; }
 
-
-
     public string PlayerTag = "Player";
 
     public int TargetLaps { get; private set; } = 5;
 
     private RoadPositionTracker m_trck;
+
+    public RoadPositionTracker PlayerTracker => m_trck;
+
+    public GameObject GameOverOverlay;
 
     public void Awake()
     {
@@ -19,8 +21,11 @@ public class GameWinCondition : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(m_trck.Lap > TargetLaps && !Place.HasValue) {
+        if (m_trck.Lap > TargetLaps && !Place.HasValue)
+        {
             Place = m_trck.CalculatePlace();
+            m_trck.GetComponentInChildren<PlayerControllerSelectionManager>().MakeAIControllable();
+            GameOverOverlay.SetActive(true);
         }
     }
 }

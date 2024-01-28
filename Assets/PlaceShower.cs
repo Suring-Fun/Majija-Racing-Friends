@@ -14,12 +14,13 @@ public class PlaceShower : MonoBehaviour
     {
         m_lab = GetComponent<Text>();
         m_gm = FindObjectOfType<GameWinCondition>();
+        m_trk = m_gm.PlayerTracker;
     }
 
     int m_lastCell = -1;
     private Text m_lab;
     private GameWinCondition m_gm;
-    public RoadPositionTracker m_trk;
+    private RoadPositionTracker m_trk;
 
     // Update is called once per frame
     void LateUpdate()
