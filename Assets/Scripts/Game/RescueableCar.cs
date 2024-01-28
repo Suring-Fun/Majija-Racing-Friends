@@ -118,7 +118,7 @@ public class RescueableCar : MonoBehaviour
         var tracking = m_movenment.Tracking;
         bool itWasAtTheGround = !m_isSwimming;
 
-        if (m_isSwimming |= tracking.CarInTheWater)
+        if (m_isSwimming |= (tracking.CarInTheWater && !tracking.EdgeIsSolid))
         {
             m_swimDirection = -tracking.DirectionToRoadCenter;
             var body = m_movenment.Rigidbody2D;

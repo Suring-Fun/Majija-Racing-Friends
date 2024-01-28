@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371266203452396064}
   - component: {fileID: 4371266203452396067}
+  - component: {fileID: -9126092906848429551}
   m_Layer: 0
   m_Name: OilBullet
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OilPuddlePrefab: {fileID: 5275261667984116256, guid: 263cfd108387f41e29765a9f364fa113, type: 3}
+--- !u!114 &-9126092906848429551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371266203452396066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf60400a44300c11a04dab07d0bf936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyOnlyIfEdgeIsSolid: 0
 --- !u!1 &4371266203810830998
 GameObject:
   m_ObjectHideFlags: 0

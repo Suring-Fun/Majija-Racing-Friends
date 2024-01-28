@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameWinCondition : MonoBehaviour
@@ -6,13 +7,21 @@ public class GameWinCondition : MonoBehaviour
 
     public string PlayerTag = "Player";
 
+    [field: SerializeField]
     public int TargetLaps { get; private set; } = 5;
+
 
     private RoadPositionTracker m_trck;
 
     public RoadPositionTracker PlayerTracker => m_trck;
 
     public GameObject GameOverOverlay;
+
+    public GameObject GameWonOverlay;
+
+    public float WinScreenTime = 4f;
+
+    public string DefaultSceneToGo = "Menu";
 
     public void Awake()
     {
@@ -24,8 +33,34 @@ public class GameWinCondition : MonoBehaviour
         if (m_trck.Lap > TargetLaps && !Place.HasValue)
         {
             Place = m_trck.CalculatePlace();
+
             m_trck.GetComponentInChildren<PlayerControllerSelectionManager>().MakeAIControllable();
-            GameOverOverlay.SetActive(true);
+            if (Place.Value.my > 0)
+            {
+                GameOverOverlay.SetActive(true);
+            }
+            else
+            {
+                GameWonOverlay.SetActive(true);
+                var info = FindObjectOfType<StageInfoHolder>().StageInfo;
+
+                var progress = PlayerProgress.Main;
+                int level = Mathf.Max(info.LevelRequired + 1, progress.PlayerLevel);
+
+                if (progress.PlayerLevel != level)
+                {
+                    progress.PlayerLevel = level;
+                    progress.SaveChanges();
+                }
+
+                IEnumerator Coro()
+                {
+                    yield return new WaitForSeconds(WinScreenTime);
+                    SceneTransitionManager.Main.LaunchSceneTransition(DefaultSceneToGo);
+                }
+
+                StartCoroutine(Coro());
+            }
         }
     }
 }

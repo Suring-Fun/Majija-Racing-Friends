@@ -11,11 +11,15 @@ public class Movenment : MonoBehaviour
         public Vector2 RoadCenter, RoadDirection, DirectionToRoadCenter;
         public float RoadRadius;
 
+        public float DeepWaterDistance;
+
         public Vector2 CarPosition;
 
         public bool CarIsAtTheRoad;
 
         public bool CarInTheWater;
+
+        public bool EdgeIsSolid;
     }
 
     private float m_speed = 0f;
@@ -68,7 +72,9 @@ public class Movenment : MonoBehaviour
             DirectionToRoadCenter = (pos - position).normalized,
             RoadRadius = rad,
             CarIsAtTheRoad = (pos - position).magnitude <= rad,
-            CarInTheWater = (pos - position).magnitude > rad + PathData.DistanceToWater + PathData.DistanceToDeepWater
+            CarInTheWater = (pos - position).magnitude > rad + PathData.DistanceToWater + PathData.DistanceToDeepWater,
+            EdgeIsSolid = PathData.EdgesAreSolid,
+            DeepWaterDistance = rad + PathData.DistanceToWater + PathData.DistanceToDeepWater
         };
     }
 

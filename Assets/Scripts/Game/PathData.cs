@@ -17,6 +17,9 @@ public class PathData : MonoBehaviour
     [field: SerializeField]
     public float DistanceToDeepWater { get; private set; } = 4f;
 
+    [field: SerializeField]
+    public bool EdgesAreSolid { get; private set; } = false;
+
     private (Vector3, float)[] Points { get; set; }
 
     public float TotalLength { get; private set; }

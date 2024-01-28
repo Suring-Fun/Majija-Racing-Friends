@@ -10,8 +10,8 @@ public class PlayerProgress : MonoBehaviour
 
     public int PlayerLevel
     {
-        get => m_playerLevel; private
-         set
+        get => m_playerLevel;
+        set
         {
             m_playerLevel = value;
             ProgressChanged?.Invoke(this);
@@ -23,5 +23,10 @@ public class PlayerProgress : MonoBehaviour
     public PlayerProgress()
     {
         Main = this;
+    }
+
+    internal void SaveChanges()
+    {
+        Debug.Log("Progress must be saved here");
     }
 }

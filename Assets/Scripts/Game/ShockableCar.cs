@@ -28,6 +28,8 @@ public class ShockableCar : MonoBehaviour
 
     private bool m_shocked;
 
+    public bool Shocked => m_shocked;
+
     private float m_timePassed;
 
     private Vector2 m_shockDirection;
