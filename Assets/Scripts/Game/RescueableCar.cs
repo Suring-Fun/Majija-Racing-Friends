@@ -6,7 +6,7 @@ using UnityEngine;
 public class RescueableCar : MonoBehaviour
 {
     private Movenment m_movenment;
-
+    private RoadPositionTracker m_tracker;
     private Vector2 m_swimDirection;
 
     [field: SerializeField]
@@ -23,6 +23,8 @@ public class RescueableCar : MonoBehaviour
 
     public float Min180DotResult = 0.5f;
 
+    public bool ReveseAngle = false;
+
     private bool m_isSwimming;
     private bool m_rescuing;
 
@@ -36,6 +38,7 @@ public class RescueableCar : MonoBehaviour
     private void Awake()
     {
         m_movenment = GetComponent<Movenment>();
+        m_tracker = GetComponent<RoadPositionTracker>();
         m_cum = GetComponentInChildren<Camera>();
         if (m_cum)
         {
@@ -55,11 +58,17 @@ public class RescueableCar : MonoBehaviour
 
     private IEnumerator CumRescueProgram()
     {
+        if (m_tracker)
+            m_tracker.enabled = false;
         m_movenment.FreeFly++;
 
         yield return new WaitForSeconds(RescuePause);
 
-        float targetRot = Mathf.Atan2(-m_dataToRescureWith.RoadDirection.x, m_dataToRescureWith.RoadDirection.y) * Mathf.Rad2Deg;
+        Vector2 roadDirection = m_dataToRescureWith.RoadDirection;
+        if (ReveseAngle)
+            roadDirection = -roadDirection;
+
+        float targetRot = Mathf.Atan2(-roadDirection.x, roadDirection.y) * Mathf.Rad2Deg;
 
         if (m_cum)
         {
@@ -68,7 +77,7 @@ public class RescueableCar : MonoBehaviour
             Vector2 oldPos = m_cum.transform.position;
             float oldRot = m_cum.transform.eulerAngles.z;
 
-            Vector2 targetPos = m_dataToRescureWith.RoadCenter + m_dataToRescureWith.RoadDirection * m_cumPos.y;
+            Vector2 targetPos = m_dataToRescureWith.RoadCenter + roadDirection * m_cumPos.y;
 
             while (time < CameraMoveTime)
             {
@@ -99,7 +108,11 @@ public class RescueableCar : MonoBehaviour
         m_movenment.ResetAllSpeeds();
         body.velocity = default;
 
+
+        if (m_tracker)
+            m_tracker.enabled = true;
         m_movenment.FreeFly--;
+
         m_isSwimming = false;
         m_rescuing = false;
 
@@ -147,7 +160,7 @@ public class RescueableCar : MonoBehaviour
     internal void Run180RescueProgramIfRequired()
     {
         var td = m_movenment.FetchTrackingData();
-        if(Vector2.Dot(transform.up, td.RoadDirection) < Min180DotResult)
+        if (Vector2.Dot(transform.up, ReveseAngle ? -td.RoadDirection : td.RoadDirection) < Min180DotResult)
             RunRescueProgram(td);
     }
 }

@@ -27,6 +27,8 @@ public class SceneTransitionManager : MonoBehaviour
         yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         m_lastLoadedScene = scene;
 
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene));
+
         Curtains.SetActive(false);  
         m_isLoading = false;
     }

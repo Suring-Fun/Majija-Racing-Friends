@@ -28,6 +28,8 @@ public abstract class AIAction : MonoBehaviour
 
 public class AimAIAction<T> : AIAction
 {
+    public float LookForward = 10f;
+
     [field: SerializeField]
     public float Radius { get; private set; } = 7f;
 
@@ -109,7 +111,7 @@ public class AimAIAction<T> : AIAction
             {
                 if (DefaultDirectionMathToRoadDirection)
                 {
-                    (_, _, _, direction) = PathData.GetLocationAtTrack(Car.position);
+                    (_, _, _, direction) = PathData.GetLocationAtTrack(Car.position + Car.up * LookForward);
                     direction = new Vector2(
                         Vector2.Dot(Car.right, direction),
                         Vector2.Dot(Car.up, direction)

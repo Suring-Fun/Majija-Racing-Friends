@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class RoadSystem : MonoBehaviour {
+public class RoadSystem : MonoBehaviour
+{
 
-    public struct Point {
+    public struct Point
+    {
         public Transform Center;
 
         public float Radius => Center.GetChild(1).localPosition.magnitude;
@@ -12,11 +14,13 @@ public class RoadSystem : MonoBehaviour {
         public Point(Transform c) => Center = c;
     }
 
-    public struct Spline {
+    public struct Spline
+    {
         public Transform Start;
         public Transform Finish;
 
-        public Vector3 CalculatePosition(float norm01) {
+        public Vector3 CalculatePosition(float norm01)
+        {
             return Vector3.Lerp(
                     Vector3.Lerp(
                         Vector3.Lerp(Start.position, Start.GetChild(0).position, norm01),
@@ -32,10 +36,12 @@ public class RoadSystem : MonoBehaviour {
                     );
         }
 
-        public float CalcRoughLength(float step = 0.1f) {
+        public float CalcRoughLength(float step = 0.1f)
+        {
             float len = 0f;
 
-            for (float x = 0f; x < 1f; x += step) {
+            for (float x = 0f; x < 1f; x += step)
+            {
                 len += (CalculatePosition(x) - CalculatePosition(x + step)).magnitude;
             }
 
@@ -45,14 +51,19 @@ public class RoadSystem : MonoBehaviour {
 
     public float GizmoRoughty = 10f;
 
-    public IEnumerable<(Vector3 point, float distance)> GetPoints(float step = 0.5f) {
+    public float CosTolerance = 0.999f;
+
+    public IEnumerable<(Vector3 point, float distance, bool isKey)> GetPoints(float step = 0.5f)
+    {
         int chount = transform.childCount;
 
-        for (int x = 0; x < chount; ++x) {
+        for (int x = 0; x < chount; ++x)
+        {
             var ch1 = transform.GetChild(x);
             var ch2 = transform.GetChild((x + 1) % chount);
 
-            Spline s = new Spline() {
+            Spline s = new Spline()
+            {
                 Start = ch1,
                 Finish = ch2
             };
@@ -68,20 +79,43 @@ public class RoadSystem : MonoBehaviour {
             float step01 = step / len;
 
             for (float y = 0f; y < 1f; y += step01)
-                yield return (s.CalculatePosition(y), Mathf.Lerp(r1, r2, y));
+                yield return (s.CalculatePosition(y), Mathf.Lerp(r1, r2, y), y < float.Epsilon);
+        }
+    }
+
+    public IEnumerable<(Vector3 point, float distance)> GetPointsToleranced(float step)
+    {
+        var points = GetPoints(step).ToArray();
+        var pc = points[0];
+        yield return (pc.point, pc.distance);
+
+        for (int x = 0; x < points.Length - 1; ++x)
+        {
+            var pn = points[(x + 1) % points.Length];
+            var pnn = points[(x + 2) % points.Length];
+
+            float cos = Vector2.Dot((pn.point - pc.point).normalized, (pnn.point - pn.point).normalized);
+
+            if (pn.isKey || cos <= CosTolerance)
+            {
+                pc = pn;
+                yield return (pc.point, pc.distance);
+            }
         }
     }
 
     public Material material;
 
-    public IEnumerable<(Vector3 left, Vector3 right)> GetRoadSides(float step) {
+    public IEnumerable<(Vector3 left, Vector3 right)> GetRoadSides(float step)
+    {
         if (step < 0.1f)
             yield break;
 
-        var points = GetPoints(step).ToArray();
+        var points = GetPointsToleranced(step).ToArray();
 
 
-        for (int x = 0; x < points.Length; ++x) {
+        for (int x = 0; x < points.Length; ++x)
+        {
             var pc = points[x];
             var pp = points[x == 0 ? points.Length - 1 : x - 1];
             var pn = points[(x + 1) % points.Length];
@@ -107,13 +141,15 @@ public class RoadSystem : MonoBehaviour {
     }
 
 
-    public void OnDrawGizmos() {
+    public void OnDrawGizmos()
+    {
 
 
         var points = GetRoadSides(GizmoRoughty).ToArray();
 
 
-        for (int x = 0; x < points.Length; ++x) {
+        for (int x = 0; x < points.Length; ++x)
+        {
 
             var pc = points[x];
             var pn = points[(x + 1) % points.Length];

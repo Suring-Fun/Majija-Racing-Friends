@@ -8,6 +8,8 @@ public class AIMovenmentController : MonoBehaviour
 
     public float maxLerpFactor = 0.8f;
 
+    public float DirectionScale = 1f;
+
     [field: Tooltip("1 left, 0 center, +1 right")]
     [field: Range(-1f, 1f)]
     public float PositionAtTheRoad = 0f; // -1 left, 0 center, +1 right
@@ -43,7 +45,7 @@ public class AIMovenmentController : MonoBehaviour
         Vector2 targetDirection = CalculateTargetDirection(tracking);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position - Vector3.forward, tracking.RoadDirection * 5f);
+        Gizmos.DrawRay(transform.position - Vector3.forward, tracking.RoadDirection * DirectionScale * 5f);
 
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position - Vector3.forward, tracking.DirectionToRoadCenter * 5f);
@@ -73,10 +75,10 @@ public class AIMovenmentController : MonoBehaviour
     {
         Vector2 offset = (Vector2)Vector3.Cross(
                                     -Vector3.forward,
-                                    tracking.RoadDirection
+                                    tracking.RoadDirection * DirectionScale
                                     ) * PositionAtTheRoad * (tracking.RoadRadius - SafeBoards);
         return Vector2.Lerp(
-                tracking.RoadDirection,
+                tracking.RoadDirection * DirectionScale,
                 ((tracking.RoadCenter + offset) - tracking.CarPosition).normalized,
                 Mathf.Min(
                     (

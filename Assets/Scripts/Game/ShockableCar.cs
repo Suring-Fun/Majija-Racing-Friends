@@ -24,7 +24,18 @@ public class ShockableCar : MonoBehaviour
     [field: SerializeField]
     public float CollisionShockedThreshold = 2f;
 
-    public int IgnoreCollisionShocks { get; set; }
+    public int IgnoreCollisionShocks
+    {
+        get => m_ignoreCollisionShocks;
+        set
+        {
+            m_ignoreCollisionShocks = value;
+            IgnoreCollisionShocksChanged?.Invoke(this);
+        }
+    }
+
+    [field: SerializeField]
+    public string ShockWithTagWhenIgnoreShocks = "Animal";
 
     private bool m_shocked;
 
@@ -46,6 +57,8 @@ public class ShockableCar : MonoBehaviour
     public float TurnOffColliderTime { get; private set; } = 0.5f;
 
     private Collider2D m_collider;
+    private int m_ignoreCollisionShocks;
+    public event System.Action<ShockableCar> IgnoreCollisionShocksChanged;
 
     private void Awake()
     {
@@ -62,16 +75,20 @@ public class ShockableCar : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (IgnoreCollisionShocks > 0)
-            return;
 
         Vector2 normal = default;
 
         for (int x = 0; x < collision2D.contactCount; ++x)
             normal += collision2D.GetContact(x).normal;
 
-
         normal.Normalize();
+
+        if (IgnoreCollisionShocks > 0)
+        {
+            if (collision2D.gameObject.tag == ShockWithTagWhenIgnoreShocks)
+                collision2D.gameObject.GetComponent<ShockableCar>().Shock(-normal, collision2D.otherRigidbody.velocity.magnitude);
+            return;
+        }
 
         Vector2 reflected;
 
@@ -115,6 +132,8 @@ public class ShockableCar : MonoBehaviour
             Graphics.localEulerAngles = default;
             m_shocked = false;
             m_movenmnt.FreeFly--;
+            m_collider.enabled = true;
+            GetComponent<RescueableCar>().Run180RescueProgramIfRequired();
         }
     }
 
@@ -145,6 +164,9 @@ public class ShockableCar : MonoBehaviour
                 m_shocked = false;
                 m_movenmnt.FreeFly--;
                 m_movenmnt.ResetAllSpeeds();
+
+                m_collider.enabled = true;
+
                 GetComponent<RescueableCar>().Run180RescueProgramIfRequired();
             }
         }

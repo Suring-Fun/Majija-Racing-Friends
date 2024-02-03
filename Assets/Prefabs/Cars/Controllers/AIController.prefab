@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa54c6dc4cea446ca7689166360a43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookForward: 10
   <Radius>k__BackingField: 7
   <DefaultDirection>k__BackingField: {x: 0, y: -1}
   <DefaultDirectionMathToRoadDirection>k__BackingField: 0
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713b838c71b7442489e2e57fc235eb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookForward: 10
   <Radius>k__BackingField: 6
   <DefaultDirection>k__BackingField: {x: 0, y: 1}
   <DefaultDirectionMathToRoadDirection>k__BackingField: 1
@@ -138,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a95fa75097f4b46dab51b6cbbe89353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LookForward: 10
   <Radius>k__BackingField: 50
   <DefaultDirection>k__BackingField: {x: 0, y: 1}
   <DefaultDirectionMathToRoadDirection>k__BackingField: 0
@@ -268,11 +271,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SafeBoards: 5
   maxLerpFactor: 0.35
+  DirectionScale: 1
   PositionAtTheRoad: 0
   DeviationSensitivity: 1
   PosMinChangeSpeed: 10
   PosMaxChangeSpeed: 20
-  LookForwardValue: 5
+  LookForwardValue: 20
 --- !u!114 &5549795202340382409
 MonoBehaviour:
   m_ObjectHideFlags: 0

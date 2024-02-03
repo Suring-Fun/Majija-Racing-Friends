@@ -26,7 +26,7 @@ public class EdgeCollideableCar : MonoBehaviour
                 vector = Vector2.Reflect(vector, trck.DirectionToRoadCenter);
             }
 
-            m_movable.Rigidbody2D.position = trck.RoadCenter - trck.DirectionToRoadCenter * trck.DeepWaterDistance;
+            m_movable.Rigidbody2D.position = trck.RoadCenter - trck.DirectionToRoadCenter * (trck.DeepWaterDistance - 0.1f);
             m_shockable.Shock(vector.normalized, vector.magnitude);
         }
     }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8396271059916659382}
+  - component: {fileID: 3995866351807583409}
   m_Layer: 0
   m_Name: CarsPreset
   m_TagString: Untagged
@@ -37,6 +38,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3995866351807583409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396271059916659381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9612db2b8e7fba6f58f39dcda1171a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &183308244319381148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,7 +71,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -94,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369591707196842496, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: PositionAtTheRoad
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
@@ -124,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -160,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369591707196842496, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: PositionAtTheRoad
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
@@ -238,6 +251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8396271059916659382}
     m_Modifications:
+    - target: {fileID: 1808483333, guid: ba3d68ad8d68b2a1a90b93ae2515e215, type: 3}
+      propertyPath: field of view
+      value: 46.82645
+      objectReference: {fileID: 0}
     - target: {fileID: 4443285198399283320, guid: ba3d68ad8d68b2a1a90b93ae2515e215, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -248,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4443285198399283320, guid: ba3d68ad8d68b2a1a90b93ae2515e215, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4443285198399283320, guid: ba3d68ad8d68b2a1a90b93ae2515e215, type: 3}
       propertyPath: m_LocalPosition.z
@@ -314,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -350,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369591707196842496, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: PositionAtTheRoad
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
@@ -380,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1844857349073029217, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -416,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369591707196842496, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}
       propertyPath: PositionAtTheRoad
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1518c6301fadf14a875d5a18922c3d8, type: 3}

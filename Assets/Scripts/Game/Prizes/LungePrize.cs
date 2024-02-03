@@ -67,7 +67,7 @@ public class LungePrize : IPrize
         m_globalDirection = m_car.up * direction.y + m_car.right * direction.x;
         m_globalDirection.Normalize();
 
-
+        m_shockable.AbortShocking();
         // m_angleFrom = rigidbody.rotation;
         // m_angleTo = Mathf.Atan2(-m_globalDirection.x, m_globalDirection.y) * Mathf.Rad2Deg;
         // m_angleTo = Mathf.LerpAngle(m_angleFrom, m_angleTo, Vector2.Dot(m_car.up, m_globalDirection));
@@ -89,6 +89,7 @@ public class LungePrize : IPrize
                 m_inUse = false;
                 Count--;
 
+                m_moveable.Rigidbody2D.velocity = default;
                 m_shockable.IgnoreCollisionShocks--;
                 m_moveable.FreeFly--;
                 Amount = 1f;

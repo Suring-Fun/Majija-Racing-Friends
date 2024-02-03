@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
-  m_Name: 00_Forest
+  m_Name: 00_Island
   m_EditorClassIdentifier: 
-  <Cover>k__BackingField: {fileID: 21300000, guid: a1805d3571c8dad96a5191dc841cc2e6, type: 3}
-  <StageName>k__BackingField: {fileID: 11400000, guid: 9bcec90acd6c68e1ab702779e3c6c29e, type: 2}
-  <SceneName>k__BackingField: SampleScene
+  <Cover>k__BackingField: {fileID: 21300000, guid: ebb991da377b4be67a10a5dcddc0c211, type: 3}
+  <StageName>k__BackingField: {fileID: 11400000, guid: cf99a8f85f409c54b85e20596e1f8cea, type: 2}
+  <SceneName>k__BackingField: 00_RoadIsland
   <LevelRequired>k__BackingField: 0
   <SpritesOfCharacter>k__BackingField:
   - {fileID: 21300000, guid: 10bce34e04db455d3ae4266078ed0b68, type: 3}

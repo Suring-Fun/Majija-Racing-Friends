@@ -26,7 +26,7 @@ public class PathData : MonoBehaviour
 
     private void Awake()
     {
-        Points = RoadSystem.GetPoints(Step).ToArray();
+        Points = RoadSystem.GetPointsToleranced(Step).ToArray();
         TotalLength = GetTotalLength();
         Debug.Log(Points.Length);
     }

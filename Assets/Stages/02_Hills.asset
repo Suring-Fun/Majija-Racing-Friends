@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
-  m_Name: 01_Hills
+  m_Name: 02_Hills
   m_EditorClassIdentifier: 
   <Cover>k__BackingField: {fileID: 21300000, guid: 2b0e828e93f979f74b658f16f26cb920, type: 3}
   <StageName>k__BackingField: {fileID: 11400000, guid: ea202103c4d1c8b428e6505fb0db5144, type: 2}
-  <SceneName>k__BackingField: 01_Hills
-  <LevelRequired>k__BackingField: 0
+  <SceneName>k__BackingField: 02_SleeperHills
+  <LevelRequired>k__BackingField: 2
   <SpritesOfCharacter>k__BackingField:
-  - {fileID: 21300000, guid: 39b64c496fa7a04e2872900f2eb9d40f, type: 3}
+  - {fileID: 21300000, guid: b8ee2674b51f800ffade48946bdfa85d, type: 3}
