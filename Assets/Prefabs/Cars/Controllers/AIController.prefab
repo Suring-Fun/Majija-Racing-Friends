@@ -276,7 +276,7 @@ MonoBehaviour:
   DeviationSensitivity: 1
   PosMinChangeSpeed: 10
   PosMaxChangeSpeed: 20
-  LookForwardValue: 20
+  LookForwardValue: 15
 --- !u!114 &5549795202340382409
 MonoBehaviour:
   m_ObjectHideFlags: 0

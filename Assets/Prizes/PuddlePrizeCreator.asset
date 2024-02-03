@@ -18,7 +18,7 @@ MonoBehaviour:
   - 3
   - 2
   - 1
-  - 0
+  - 1
   m_icons:
   - {fileID: 21300000, guid: 7861017c452e1475cbe2e5efa5f8ced7, type: 3}
   <OilBulletPrefab>k__BackingField: {fileID: 4371266203452396067, guid: c637d815b3937015ea96230949b01807, type: 3}
