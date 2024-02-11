@@ -1,0 +1,17 @@
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/bin/Debug/net8.0/OverlayReduce
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/bin/Debug/net8.0/OverlayReduce.deps.json
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/bin/Debug/net8.0/OverlayReduce.runtimeconfig.json
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/bin/Debug/net8.0/OverlayReduce.dll
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/bin/Debug/net8.0/OverlayReduce.pdb
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.GeneratedMSBuildEditorConfig.editorconfig
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.AssemblyInfoInputs.cache
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.AssemblyInfo.cs
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.csproj.CoreCompileInputs.cache
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.dll
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/refint/OverlayReduce.dll
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.pdb
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.genruntimeconfig.cache
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/ref/OverlayReduce.dll
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayReduce.csproj.AssemblyReference.cache
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/obj/Debug/net8.0/OverlayR.5EB4C517.Up2Date
+/media/Files/Projects/Mine/Unity/CarsProto_Movenment/ExternalTools/OverlayReduce/bin/Debug/net8.0/CoreCompat.System.Drawing.dll
