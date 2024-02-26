@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class WaterRender : MonoBehaviour
@@ -29,35 +31,54 @@ public class WaterRender : MonoBehaviour
 
     private Material material;
 
+    [field: SerializeField]
+    Texture2D t;
+
+#if UNITY_EDITOR
+
+    [ContextMenu("Save runtime texture")]
+    void SaveTexture()
+    {
+        string path = UnityEditor.EditorUtility.SaveFilePanelInProject("Save runtime texture", "RuntimeTexture.png", "png", "Please select path for runtime texture.");
+        if(path is not null)
+        {
+            File.WriteAllBytes(path, t.EncodeToPNG());
+        }
+    }
+#endif
+
     void Start()
     {
-        var sizes = Vector2Int.FloorToInt(PixelsPerUnit * MaxUnits);
-        Texture2D t = new Texture2D(sizes.x, sizes.y);
-
-        t.filterMode = FilterMode.Bilinear;
-
-        for (int y = 0; y < sizes.y; ++y)
+        if (!t)
         {
-            for (int x = 0; x < sizes.x; ++x)
-            {
-                Vector2 p = new Vector2(x + .5f, y + .5f) / PixelsPerUnit + Offset;
-                (Vector2 roadP, _, float radius) = PathData.GetNearestPoint(p);
-                t.SetPixel(
-                    x, 
-                    y, 
-                    new Color(
-                        (Color.r), 
-                        (Color.g), 
-                        (Color.b), 
-                        Mathf.Clamp(
-                            ((p - roadP).magnitude - PathData.DistanceToWater - radius) * texCoof,
-                            -1f, 1f
-                            ) * 0.5f + 0.5f)
-                            );
-            }
-        }
+            var sizes = Vector2Int.FloorToInt(PixelsPerUnit * MaxUnits);
+            t = new Texture2D(sizes.x, sizes.y);
 
-        t.Apply();
+            t.filterMode = FilterMode.Bilinear;
+
+            for (int y = 0; y < sizes.y; ++y)
+            {
+                for (int x = 0; x < sizes.x; ++x)
+                {
+                    Vector2 p = new Vector2(x + .5f, y + .5f) / PixelsPerUnit + Offset;
+                    (Vector2 roadP, _, float radius) = PathData.GetNearestPoint(p);
+                    t.SetPixel(
+                        x,
+                        y,
+                        new Color(
+                            (Color.r),
+                            (Color.g),
+                            (Color.b),
+                            Mathf.Clamp(
+                                ((p - roadP).magnitude - PathData.DistanceToWater - radius) * texCoof,
+                                -1f, 1f
+                                ) * 0.5f + 0.5f)
+                                );
+                }
+            }
+
+            t.Apply();
+        }
 
         mesh = new Mesh();
         mesh.vertices = new Vector3[] {

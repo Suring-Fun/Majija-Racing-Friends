@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Roughty: 0.5
-  material: {fileID: 2100000, guid: e330185f8494fbd4b8186a4564e2d2aa, type: 2}
+  material: {fileID: 2100000, guid: 1666ffea9ce8509858035a6727b81dda, type: 2}
 --- !u!1 &860790741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,13 +3187,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PathData>k__BackingField: {fileID: 895025583}
-  PixelsPerUnit: 0.125
-  SkipValue: 2
+  PixelsPerUnit: 1
+  SkipValue: 1
   MaxUnits: {x: 1024, y: 1024}
   Offset: {x: -512, y: -512}
-  <Color>k__BackingField: {r: 0.120149545, g: 0.24458353, b: 0.5660378, a: 1}
+  <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   texCoof: 0.1
   MaterialPath: Unlit/Water01
+  t: {fileID: 2800000, guid: 1d554379b22ec5dd99025a41a6d6e455, type: 3}
 --- !u!4 &1870873113
 Transform:
   m_ObjectHideFlags: 0
@@ -3530,8 +3531,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 1625601007b88c74bb7b67f5a576bbd1, type: 3}
-  m_Color: {r: 0.8679245, g: 0.64346576, b: 0.2988608, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 68eb12586189a74b29f7a796205909c7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2

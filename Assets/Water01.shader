@@ -58,9 +58,36 @@ Shader "Unlit/Water01"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample texture and return it
+                fixed noise = (sin((i.uv.y + i.uv.x) * 128 + _Time.y + cos(i.uv.y * 128 + _Time.y * 2)) * 0.5 + 1) * 0.05;
                 fixed4 col = tex2D(_MainTex, i.uv);
-                if(col.a > (sin(_Time.y * 2) * 0.5 + 1) * 0.15 + 0.5) {
-                    col.a = 1.0;
+                fixed threshold = (sin(_Time.y * 2) * 0.5 + 1) * 0.15 + 0.5;
+                fixed threshold2 = (sin((_Time.y) * 2 - 1.5) * 0.5 + 1) * 0.15 + 0.5;
+                //fixed shadow = (sin((_Time.y) * 2) * 0.5 + 1) * 0.15;
+                fixed offset = (sin(_Time.y * 2 * 1.5) * 0.5 + 1) * 0.1;
+                if(col.a > threshold + offset + noise) {
+                    float2 pixel = i.uv * 128;
+                    float value1 = sin(pixel.x + _Time.y * 0.5 + cos(pixel.y + _Time.y * 2 * 0.5) * 0.5 * sin(_Time.y * 2 * 0.5)) * 0.5 + 1;
+                    float value2 = cos(pixel.y + _Time.y * 0.5 + sin(pixel.x + _Time.y * 2 * 0.5) * 0.5 * cos(_Time.y * 2 * 0.5)) * 0.5 + 1;
+                    float value3 = cos(pixel.y + _Time.y * 2 * 0.5 + sin(pixel.x + _Time.y * 2 * 0.5) * 0.5 * cos(_Time.y * 2 * 0.5)) * 0.5 + 1;
+                    float value4 = cos(pixel.y + _Time.y * 2 * 0.5 + sin(pixel.x + _Time.y * 2 * 0.5) * 0.5 * cos(_Time.y * 2 * 0.5)) * 0.5 + 1;
+                    //float value5 = cos(pixel.y + _Time.y * 4 + sin(pixel.x + _Time.y * 2) * 0.5 * cos(_Time.y * 2)) * 0.5 + 1;
+                    ///float value6 = cos(pixel.y + _Time.y * 4 + sin(pixel.x + _Time.y * 2) * 0.5 * cos(_Time.y * 2)) * 0.5 + 1;
+                    
+                    float value = (value1 * ( 0.75 * 0.5) + value2 * (0.75 * 0.5) + value3 * 0.125 + value4 * 0.125) * ((col.a - (0.4 + noise * 0.1)) / (0.6 + noise * 0.1));
+                    
+                    
+                    if(value < 1.005) {
+                        col = float4(100.0/255.0, 125.0/255.0,200.0/255.0,1.0 / 0.65) * 0.65;
+                    }
+                    else {
+                        col = fixed4(14.0/255.0, 65.0/255.0,120.0/255.0,1.0);
+                    }
+                }
+                else if(col.a > threshold + noise) {
+                    col = float4(0.8,0.85,0.9,1.0);
+                }
+                else if(col.a > threshold2 + noise) {
+                    col = float4(0,0,0,0.1);
                 }
                 else {
                     col.a = 0.0;
