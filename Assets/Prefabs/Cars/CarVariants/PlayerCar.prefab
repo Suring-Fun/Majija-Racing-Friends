@@ -59,7 +59,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 53.56772
+  field of view: 57.26747
   orthographic: 1
   orthographic size: 40
   m_Depth: -1
@@ -205,6 +205,26 @@ PrefabInstance:
     - target: {fileID: 891383469467520485, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086388750508870204, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Name
+      value: BackWheels
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522898345973520354, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645201fcc4d749470a1864ce24a23091, type: 3}

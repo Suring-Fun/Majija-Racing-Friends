@@ -124,6 +124,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar
       objectReference: {fileID: 0}
+    - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Color.b
+      value: 0.16642934
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2500702
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6415094
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
 --- !u!4 &1844857349073029217 stripped

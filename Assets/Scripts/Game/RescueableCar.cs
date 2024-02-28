@@ -34,6 +34,8 @@ public class RescueableCar : MonoBehaviour
 
     private Movenment.TrackingData m_dataToRescureWith;
 
+    public bool IsResquing => m_rescuing;
+    public bool IsSwimming => m_isSwimming;
 
     private void Awake()
     {

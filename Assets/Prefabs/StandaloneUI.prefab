@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 8650901829697512833}
   - component: {fileID: 8650901829697512836}
   m_Layer: 5
-  m_Name: SandaloneUI
+  m_Name: StandaloneUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
