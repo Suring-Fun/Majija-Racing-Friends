@@ -19,7 +19,7 @@ MonoBehaviour:
   - 6
   - 3
   - 0
-  <Icon>k__BackingField: {fileID: 21300000, guid: d056b245c095f9dfe9193e0d6f62467c, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 2ec0531e704301e99aed8a16a149a63a, type: 3}
   <Duration>k__BackingField: 5
   <MoveMultFactor>k__BackingField: 1.35
   <RotateMultFactor>k__BackingField: 1

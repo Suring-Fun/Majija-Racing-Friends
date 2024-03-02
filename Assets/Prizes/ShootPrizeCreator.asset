@@ -20,7 +20,9 @@ MonoBehaviour:
   - 1
   - 2
   m_icons:
-  - {fileID: 21300000, guid: e2ebd38a75b957a4bb104bf991e286fd, type: 3}
+  - {fileID: 21300000, guid: e04b74d343f6d2560a8707da0a745fc0, type: 3}
+  - {fileID: 21300000, guid: 4f5621c0d8ff8420c9435dc21aebbba8, type: 3}
+  - {fileID: 21300000, guid: 7c759151e7678e05babde15dfd937028, type: 3}
   <Speed>k__BackingField: 40
   <Count>k__BackingField: 3
   <BulletPerfab>k__BackingField: {fileID: 6658718314498171231, guid: e3ccee0fea0b915a2a684948d3dc98d7, type: 3}
