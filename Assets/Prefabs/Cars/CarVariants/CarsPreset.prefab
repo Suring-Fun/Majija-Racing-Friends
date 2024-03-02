@@ -253,7 +253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1808483333, guid: ba3d68ad8d68b2a1a90b93ae2515e215, type: 3}
       propertyPath: field of view
-      value: 27.685036
+      value: 59.61816
       objectReference: {fileID: 0}
     - target: {fileID: 4443285198399283320, guid: ba3d68ad8d68b2a1a90b93ae2515e215, type: 3}
       propertyPath: m_RootOrder

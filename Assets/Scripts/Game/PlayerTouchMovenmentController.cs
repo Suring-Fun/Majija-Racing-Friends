@@ -9,6 +9,8 @@ public class PlayerTouchMovenmentController : MonoBehaviour
 
     public float StickRadius = 1f;
 
+    public AnimationCurve Factor;
+
     private StickFetch m_movenmentStick;
 
     void Awake()
@@ -26,7 +28,7 @@ public class PlayerTouchMovenmentController : MonoBehaviour
         m.EngineIsTurnedOn = m_movenmentStick.IsInUse;
         if (m.EngineIsTurnedOn)
         {
-            m.RotationDirection = m_movenmentStick.Position.x;
+            m.RotationDirection = Factor.Evaluate(Mathf.Abs(m_movenmentStick.Position.x)) * Mathf.Sign(m_movenmentStick.Position.x);
         }
     }
 }

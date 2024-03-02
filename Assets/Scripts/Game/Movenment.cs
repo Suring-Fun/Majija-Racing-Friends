@@ -151,12 +151,13 @@ public class Movenment : MonoBehaviour
         m_speed *= moveMultFactor;
         m_angularSpeed *= rotateMultFactor;
 
-         return () => { 
+        return () =>
+        {
             MaxSpeed = moveSpeed;
             MaxAngularSpeed = angularSpeed;
 
             m_speed /= moveMultFactor;
             m_angularSpeed /= rotateMultFactor;
-         };
+        };
     }
 }
