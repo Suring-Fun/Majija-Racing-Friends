@@ -10,6 +10,7 @@ public class CounterUpdater : MonoBehaviour
     {
         m_label = GetComponent<Text>();
         FindObjectOfType<GameStartCondition>().LabelChanged += LabelChanged;
+        LabelChanged(null, true);
     }
 
     private void LabelChanged(string label, bool isHidden)

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9919c85d442b9b2a3a5e7a88705ee4, type: 3}
   m_Name: HillsName
   m_EditorClassIdentifier: 
-  <DefaultValue>k__BackingField: Hills of Sleepy Hedgehog
+  <DefaultValue>k__BackingField: "\u0425\u043E\u043B\u043C\u044B \u0421\u043E\u043D\u0438"

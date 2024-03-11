@@ -7,6 +7,10 @@ public class PlayerTouchMovenmentController : MonoBehaviour
 
     public RectTransform Stick;
 
+    public RectTransform Ruddle;
+
+    public float RuddleMoveSize = 3.5f / 2f;
+
     public float StickRadius = 1f;
 
     public AnimationCurve Factor;
@@ -25,6 +29,8 @@ public class PlayerTouchMovenmentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ruddle.localPosition = Vector3.right * m_movenmentStick.Position.x;
+
         m.EngineIsTurnedOn = m_movenmentStick.IsInUse;
         if (m.EngineIsTurnedOn)
         {

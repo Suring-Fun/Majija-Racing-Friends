@@ -5,9 +5,9 @@ public class PlaceShower : MonoBehaviour
 {
     public bool ShowLap;
 
-    public string Format = "{0}/{1}";
+    public LocalizedString Format;
 
-    public string FinishTxt = "Finish";
+    public LocalizedString FinishTxt;
 
     // Start is called before the first frame update
     void Start()

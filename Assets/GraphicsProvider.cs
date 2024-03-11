@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GraphicsProvider : MonoBehaviour
@@ -8,7 +9,11 @@ public class GraphicsProvider : MonoBehaviour
 
     public GameObject[] Graphics;
 
-    void Awake() {
+    public static GraphicsProvider GetProviderFromScene(string kind) 
+    => FindObjectsOfType<GraphicsProvider>().
+        Where(x => x.KindOfGraphics == kind).
+        First();
 
-    }
+    public GameObject SelectRandomGraphics()
+        => Graphics[Random.Range(0, Graphics.Length)];
 }

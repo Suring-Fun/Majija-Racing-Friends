@@ -27,7 +27,7 @@ public class StageSelectionManager : MonoBehaviour
             button.Clicked += SelectButton;
         }
 
-        SelectButton(m_buttons[0]);
+        SelectButton(m_buttons[Mathf.Clamp(PlayerProgress.Main.PlayerLevel, 0, m_buttons.Length - 1)]);
     }
 
     private void UdpateInfo(StageInfo stageInfo)

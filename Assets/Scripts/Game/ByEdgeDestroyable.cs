@@ -19,7 +19,10 @@ public class ByEdgeDestroyable : MonoBehaviour
             (var dist, _, var rad, _) = m_pd.GetLocationAtTrack(transform.position);
 
             if (dist > rad + m_pd.DistanceToWater + m_pd.DistanceToDeepWater)
+            {
+                IPreDestroying.NotifyObjectAboutDeath(gameObject);
                 Destroy(gameObject);
+            }
 
         }
     }

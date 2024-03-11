@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 797700852139872766}
   - component: {fileID: 705294940578592304}
   - component: {fileID: 6658718314498171231}
+  - component: {fileID: 8153554533414417709}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -85,6 +86,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Lifetime>k__BackingField: 50
+--- !u!114 &8153554533414417709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371266203452396066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7bd22b8415e9fee852e276fca02264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Prefab>k__BackingField: {fileID: 2877980610904528344, guid: aa3979d0fc0e9be4799de1a1c57f5133, type: 3}
+  <Offset>k__BackingField: {x: 0, y: 0, z: -10}
 --- !u!1 &4371266203810830998
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371266203810830999}
   - component: {fileID: 4371266203810830996}
+  - component: {fileID: 7858887530243263490}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -169,3 +185,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7858887530243263490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371266203810830998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051bb8817a0ab926faa3aade4a7cfec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Delay>k__BackingField: 0.02

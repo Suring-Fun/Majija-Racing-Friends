@@ -17,4 +17,7 @@ MonoBehaviour:
   <SceneName>k__BackingField: 00_RoadIsland
   <LevelRequired>k__BackingField: 0
   <SpritesOfCharacter>k__BackingField:
-  - {fileID: 21300000, guid: 10bce34e04db455d3ae4266078ed0b68, type: 3}
+  - {fileID: 21300000, guid: d31f02efc83b935e2880d3b77c763180, type: 3}
+  - {fileID: 21300000, guid: 1e6d341f69ebec9d5b4c42a49efba99d, type: 3}
+  - {fileID: 21300000, guid: d1b727e7626751c8fb691556c69cfb90, type: 3}
+  - {fileID: 21300000, guid: 5d1f8f4ea2f0b73c49d967a2f15c57dd, type: 3}

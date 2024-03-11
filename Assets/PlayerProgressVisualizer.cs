@@ -31,7 +31,7 @@ public class PlayerProgressVisualizer : MonoBehaviour
     void Update()
     {
         PlayerProgress progress = PlayerProgress.Main;
-        PlayerGraphicalInfo gi = GraphicalInfoPerLevel[progress.PlayerLevel];
+        PlayerGraphicalInfo gi = GraphicalInfoPerLevel[Mathf.Clamp(progress.PlayerLevel, 0, GraphicalInfoPerLevel.Length - 1)];
 
         Sprite[] animSource = progress.PlayerLevel < SelectionManager.Info.LevelRequired ? gi.ScareState : gi.NormalState;
         Sprite current = animSource[(int)(Time.time / TimePerFrame) % animSource.Length];

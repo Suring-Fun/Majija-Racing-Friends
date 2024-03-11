@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9919c85d442b9b2a3a5e7a88705ee4, type: 3}
   m_Name: IslandName
   m_EditorClassIdentifier: 
-  <DefaultValue>k__BackingField: Island of Golfi
+  <DefaultValue>k__BackingField: "\u041E\u0441\u0442\u0440\u043E\u0432 \u0420\u043E\u0434\u0430"

@@ -24,6 +24,7 @@ public class SpeedUpPrize : IPrize
     public event Action<IPrize> PrizeChanged;
 
     private Transform m_car;
+    private ShockableCar m_shockable;
 
     public SpeedUpPrize(Transform car, Sprite icon, float amountDecrease01PerSecond, float moveMultFactor, float rotateMultFactor)
     {
@@ -32,6 +33,7 @@ public class SpeedUpPrize : IPrize
         AmountDecreaseSpeed = amountDecrease01PerSecond;
         MoveMultFactor = moveMultFactor;
         RotateMultFactor = rotateMultFactor;
+        m_shockable = car.GetComponent<ShockableCar>();
     }
 
     public void Apply(Vector2 direction)
@@ -41,6 +43,7 @@ public class SpeedUpPrize : IPrize
 
         IsApplyable = false;
 
+        m_shockable.AbortShocking();
         var movenment = m_car.GetComponent<Movenment>();
         var shockable = m_car.GetComponent<ShockableCar>();
 

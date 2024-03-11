@@ -17,4 +17,13 @@ MonoBehaviour:
   <SceneName>k__BackingField: 02_SleeperHills
   <LevelRequired>k__BackingField: 2
   <SpritesOfCharacter>k__BackingField:
-  - {fileID: 21300000, guid: b8ee2674b51f800ffade48946bdfa85d, type: 3}
+  - {fileID: 21300000, guid: b7e49aa26a728b51daa6f17495d220c9, type: 3}
+  - {fileID: 21300000, guid: 43278bcf21ff9e820a4b9149f5b2cf91, type: 3}
+  - {fileID: 21300000, guid: 683dae62629ac91418faf781249d120e, type: 3}
+  - {fileID: 21300000, guid: 3205720989e065434bea2b1d9c697bf3, type: 3}
+  - {fileID: 21300000, guid: 45f7bb595b18d111cac489558499a16d, type: 3}
+  - {fileID: 21300000, guid: 00d15189e9738f561a8e092f22ff240f, type: 3}
+  - {fileID: 21300000, guid: 7310f80cf7a9f6463b1adc11707f196f, type: 3}
+  - {fileID: 21300000, guid: b56dfae43910b065890f5ba260315e35, type: 3}
+  - {fileID: 21300000, guid: c79f588f535c88990bd042f90fa36d43, type: 3}
+  - {fileID: 21300000, guid: f0b6f43ee3bb13c358877c387b3d3460, type: 3}

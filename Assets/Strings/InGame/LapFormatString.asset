@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b9919c85d442b9b2a3a5e7a88705ee4, type: 3}
-  m_Name: GoString
+  m_Name: LapFormatString
   m_EditorClassIdentifier: 
-  <DefaultValue>k__BackingField: Go
+  <DefaultValue>k__BackingField: "\u041A\u0440\u0443\u0433 {0} \u0438\u0437 {1}"

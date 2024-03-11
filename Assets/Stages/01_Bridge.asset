@@ -17,4 +17,9 @@ MonoBehaviour:
   <SceneName>k__BackingField: 01_RaspilBridge
   <LevelRequired>k__BackingField: 1
   <SpritesOfCharacter>k__BackingField:
-  - {fileID: 21300000, guid: 39b64c496fa7a04e2872900f2eb9d40f, type: 3}
+  - {fileID: 21300000, guid: cd1e988b730bcd8df8c59daa2535d0f3, type: 3}
+  - {fileID: 21300000, guid: e62dd78ce5e9d15f69d94459febd680c, type: 3}
+  - {fileID: 21300000, guid: 33f8e46eac218bff68a83ae4e597c08b, type: 3}
+  - {fileID: 21300000, guid: 5ee81863dacb71a96b6ce76f76a471af, type: 3}
+  - {fileID: 21300000, guid: 6650bd0c40b3e07e5aa1547e8d03147a, type: 3}
+  - {fileID: 21300000, guid: 361e9afb98b39e923a892b6ed53bbd84, type: 3}

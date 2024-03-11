@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OilPuddle : MonoBehaviour
@@ -9,6 +7,7 @@ public class OilPuddle : MonoBehaviour
 
         if(shockable) {
             shockable.Shock(collider2D.transform.up, collider2D.attachedRigidbody.velocity.magnitude);
+            IPreDestroying.NotifyObjectAboutDeath(gameObject);
             Destroy(gameObject);
         }
     }

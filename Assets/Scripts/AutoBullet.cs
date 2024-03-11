@@ -14,6 +14,9 @@ public class AutoBullet : MonoBehaviour
 
     public float MaxAngleFromRoad = 45f;
 
+    [field: SerializeField]
+    public Transform Graphics { get; private set; }
+
     private void Awake()
     {
         m_pathData = FindObjectOfType<PathData>();
@@ -45,6 +48,7 @@ public class AutoBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
+        IPreDestroying.NotifyObjectAboutDeath(gameObject);
         Destroy(gameObject);
     }
 
@@ -72,10 +76,14 @@ public class AutoBullet : MonoBehaviour
 
         float angleDelta = Mathf.Clamp(Mathf.DeltaAngle(roadDirAngle, dirAngle), -MaxAngleFromRoad, +MaxAngleFromRoad);
         float resultAngle = roadDirAngle + angleDelta;
+        float resultDegreesAngle = resultAngle;
         resultAngle *= Mathf.Deg2Rad;
 
         dir = new(Mathf.Cos(resultAngle), Mathf.Sin(resultAngle));
 
         m_rigidbody2D.velocity = dir * Speed;
+
+        //Let's rotate the graphics across the road direction axis.
+        Graphics.transform.eulerAngles = Vector3.forward *  (resultDegreesAngle - 90f);       
     }
 }

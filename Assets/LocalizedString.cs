@@ -3,7 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "LocalizedString", fileName = "LocalizedString")]
 public class LocalizedString : ScriptableObject
 {
-    [field: SerializeField] public string DefaultValue { get; private set; } = string.Empty;
+    [field: SerializeField] 
+    [field: TextArea]
+    public string DefaultValue { get; private set; } = string.Empty;
     public override string ToString()
     {
         return DefaultValue;
