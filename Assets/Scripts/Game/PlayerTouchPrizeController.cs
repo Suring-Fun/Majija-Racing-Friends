@@ -98,7 +98,7 @@ public class PlayerTouchPrizeController : MonoBehaviour
     {
         IconRoot.SetActive(false);
         StickSubstrateRoot.SetActive(true);
-        ConfigureStick(FindStickProfileFor(m_host.Prize.ApplyMode));
+        ConfigureStick(FindStickProfileFor(m_host.MainPrize.ApplyMode));
     }
 
     private void UpdateStickPosition()
@@ -132,11 +132,11 @@ public class PlayerTouchPrizeController : MonoBehaviour
 
     void LateUpdate()
     {
-        var prize = m_host.Prize;
+        var prize = m_host.MainPrize;
 
         if (prize is object)
         {
-            bool iconModeIsEnabled = !m_stickFetch.IsInUse | !m_host.PrizeAccessed;
+            bool iconModeIsEnabled = !m_stickFetch.IsInUse | !m_host.MainPrizeAccessed;
 
             if (iconModeIsEnabled)
             {
@@ -147,6 +147,7 @@ public class PlayerTouchPrizeController : MonoBehaviour
                     m_applyVector = null;
                 }
                 m_host.DisableApplyView();
+                m_host.MainPrizeIsLocked = false;
             }
             else
             {
@@ -154,6 +155,7 @@ public class PlayerTouchPrizeController : MonoBehaviour
                 UpdateStickPosition();
                 UpdateApplyVector();
                 UpdateApplyPreview();
+                m_host.MainPrizeIsLocked = true;
             }
 
         }

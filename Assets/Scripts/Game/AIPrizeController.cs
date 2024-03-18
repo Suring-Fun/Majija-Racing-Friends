@@ -18,7 +18,7 @@ public class AIPrizeController : MonoBehaviour
 
     void Start()
     {
-        (Host = GetComponentInParent<PrizeHost>()).PrizeChanged += PH;
+        (Host = GetComponentInParent<PrizeHost>()).MainPrizeChanged += PH;
         PH(Host);
     }
 
@@ -29,7 +29,10 @@ public class AIPrizeController : MonoBehaviour
 
     private void ReRun()
     {
-        m_running = Host.Prize is object;
+        m_handler = null;
+        Host.DisableApplyView();
+        
+        m_running = Host.MainPrize is object;
         m_time = UnityEngine.Random.Range(MinPause, MaxPause);
     }
 

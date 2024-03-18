@@ -24,6 +24,11 @@ public class ShockableCar : MonoBehaviour
     [field: SerializeField]
     public float CollisionShockedThreshold = 2f;
 
+    [field: SerializeField]
+    public int ShockLimit { get; private set; } = 2;
+
+    private int m_shocks = 0;
+
     public int IgnoreCollisionShocks
     {
         get => m_ignoreCollisionShocks;
@@ -108,7 +113,8 @@ public class ShockableCar : MonoBehaviour
         }
         else
         {
-            m_movenmnt.Rigidbody2D.rotation = Mathf.Atan2(-reflected.x, reflected.y) * Mathf.Rad2Deg;
+            // Bad idea to rotate hard.
+            //m_movenmnt.Rigidbody2D.rotation = Mathf.Atan2(-reflected.x, reflected.y) * Mathf.Rad2Deg;
         }
     }
 
@@ -123,6 +129,10 @@ public class ShockableCar : MonoBehaviour
         if (!m_shocked)
             m_movenmnt.FreeFly++;
         m_shocked = true;
+        m_shocks++;
+
+        if (m_shocks >= ShockLimit)
+            GetComponent<RescueableCar>().RunRescueProgram(m_movenmnt.FetchTrackingData());
     }
 
     public void AbortShocking()
@@ -134,6 +144,7 @@ public class ShockableCar : MonoBehaviour
             m_movenmnt.FreeFly--;
             m_collider.enabled = true;
             GetComponent<RescueableCar>().Run180RescueProgramIfRequired();
+            m_shocks = 0;
         }
     }
 
@@ -168,6 +179,7 @@ public class ShockableCar : MonoBehaviour
                 m_collider.enabled = true;
 
                 GetComponent<RescueableCar>().Run180RescueProgramIfRequired();
+                m_shocks = 0;
             }
         }
     }

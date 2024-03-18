@@ -25,8 +25,9 @@ public class PlayerMousePrizeController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && m_prizeHost.PrizeAccessed)
+        if (Input.GetMouseButton(0) && m_prizeHost.MainPrizeAccessed)
         {
+            m_prizeHost.MainPrizeIsLocked = true;
             m_actionPlanned = true;
 
             Vector3 worldDir = m_camera.ScreenToWorldPoint(Input.mousePosition + Vector3.forward) - m_car.position;
@@ -42,7 +43,7 @@ public class PlayerMousePrizeController : MonoBehaviour
                 return;
             }
 
-            if (m_prizeHost.Prize.ApplyMode == IPrize.PrizeApplyMode.JustApply)
+            if (m_prizeHost.MainPrize.ApplyMode == IPrize.PrizeApplyMode.JustApply)
             {
                 m_lastSavedDirection = Vector2.up;
                 m_prizeHost.EnableApplyPreview(Vector2.up);
@@ -51,7 +52,7 @@ public class PlayerMousePrizeController : MonoBehaviour
 
             Vector2 directionNormalized = direction.normalized;
 
-            float _01 = m_prizeHost.Prize.PreviewDistance(directionNormalized);
+            float _01 = m_prizeHost.MainPrize.PreviewDistance(directionNormalized);
             if (float.IsFinite(_01))
             {
                 directionNormalized *= Mathf.Clamp01(direction.magnitude / _01);
@@ -62,10 +63,11 @@ public class PlayerMousePrizeController : MonoBehaviour
         }
         else
         {
-            if (m_actionPlanned && m_prizeHost.PrizeAccessed && Input.GetMouseButtonUp(0))
+            if (m_actionPlanned && m_prizeHost.MainPrizeAccessed && Input.GetMouseButtonUp(0))
                 m_prizeHost.ApplyPrize(m_lastSavedDirection);
 
             m_prizeHost.DisableApplyView();
+            m_prizeHost.MainPrizeIsLocked = false;
         }
     }
 }

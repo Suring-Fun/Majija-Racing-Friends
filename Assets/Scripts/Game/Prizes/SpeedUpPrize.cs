@@ -1,5 +1,4 @@
 using System;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class SpeedUpPrize : IPrize
@@ -7,6 +6,8 @@ public class SpeedUpPrize : IPrize
     public Sprite Icon { get; }
 
     public bool IsApplyable { get; private set; } = true;
+
+    public bool IsReplaceable { get; private set; } = true;
 
     public float Amount { get; private set; } = 1f;
 
@@ -42,6 +43,7 @@ public class SpeedUpPrize : IPrize
             return;
 
         IsApplyable = false;
+        IsReplaceable = false;
 
         m_shockable.AbortShocking();
         var movenment = m_car.GetComponent<Movenment>();

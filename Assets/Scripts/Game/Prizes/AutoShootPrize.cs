@@ -7,6 +7,8 @@ public class AutoShootPrize : IPrize
 
     public bool IsApplyable { get; private set; } = true;
 
+    public bool IsReplaceable { get; private set; } = true;
+
     public float Amount => 1f;
 
     public IPrize.PrizeApplyMode ApplyMode => IPrize.PrizeApplyMode.JustApply;
@@ -27,6 +29,7 @@ public class AutoShootPrize : IPrize
     public void Apply(Vector2 direction)
     {
         IsApplyable = false;
+        IsReplaceable = false;
 
         var inst = UnityEngine.Object.Instantiate(Prefab, m_car.position, Quaternion.identity);
         inst.Init(m_car);

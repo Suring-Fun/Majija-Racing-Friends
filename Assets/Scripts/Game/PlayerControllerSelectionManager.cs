@@ -8,6 +8,8 @@ public class PlayerControllerSelectionManager : MonoBehaviour
     public GameObject StandaloneVer;
     public GameObject MobileVer;
 
+    public bool UseMobileInEditor;
+
     private GameObject m_current;
 
     [ContextMenu("Make AI controllable")]
@@ -19,7 +21,7 @@ public class PlayerControllerSelectionManager : MonoBehaviour
     public void Awake() {
         GameObject prefab = StandaloneVer;
         #if UNITY_EDITOR
-        prefab = StandaloneVer;
+        prefab = UseMobileInEditor ? MobileVer : StandaloneVer;
         #elif UNITY_ANDROID
         prefab = MobileVer;
         #endif

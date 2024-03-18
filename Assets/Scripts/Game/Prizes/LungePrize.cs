@@ -11,6 +11,8 @@ public class LungePrize : IPrize
 
     public bool IsApplyable => Count > 0 && !m_inUse;
 
+    public bool IsReplaceable => !m_inUse;
+
     public float Amount { get; private set; } = 1f;
 
     private float m_amountPerSecond;

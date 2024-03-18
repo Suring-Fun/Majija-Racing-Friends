@@ -14,6 +14,8 @@ public class PuddlePrize : IPrize
 
     public bool IsApplyable => Count > 0;
 
+    public bool IsReplaceable => true;
+
     public float Amount => 1f;
 
     public IPrize.PrizeApplyMode ApplyMode => IPrize.PrizeApplyMode.TakeAim;

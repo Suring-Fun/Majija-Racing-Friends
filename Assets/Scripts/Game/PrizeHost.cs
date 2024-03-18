@@ -1,19 +1,23 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class PrizeHost : MonoBehaviour
 {
-    private IPrize m_prize;
+    private IPrize m_mainPrize;
 
-    public IPrize Prize
+
+    public IPrize MainPrize
     {
-        get => m_prize;
+        get => m_mainPrize;
         private set
         {
-            m_prize = value;
-            PrizeChanged?.Invoke(this);
+            m_mainPrize = value;
+            MainPrizeChanged?.Invoke(this);
         }
     }
+
+    public IPrize ReservedPrize { get; private set; }
 
     [field: SerializeField]
     public LineRenderer LineRenderer { get; private set; }
@@ -21,34 +25,61 @@ public class PrizeHost : MonoBehaviour
     [field: SerializeField]
     public Transform WhereAmIMark { get; private set; }
 
-    public bool PrizeAccessed => m_prize?.IsApplyable ?? false;
+    public bool MainPrizeAccessed => m_mainPrize?.IsApplyable ?? false;
 
-    public event Action<PrizeHost> PrizeChanged;
+    public bool MainPrizeIsLocked
+    {
+        get => m_mainPrizeIsLocked;
+        set
+        {
+            m_mainPrizeIsLocked = value;
+        }
+    }
+
+    public event Action<PrizeHost> MainPrizeChanged;
 
     public void ApplyPrize(Vector2 direction)
-        => Prize.Apply(direction);
+        => MainPrize.Apply(direction);
 
     void OnTriggerStay2D(Collider2D c)
     {
         var prize = c.GetComponent<PrizeBody>();
         var p = prize.TryUse(transform);
 
-        if (Prize is null && p is object)
-            Prize = p;
+        bool mainPrizeIsReplaceable = MainPrizeIsReplaceable;
+
+        if (p is object)
+        {
+            if (mainPrizeIsReplaceable)
+                MainPrize = p;
+            else
+                ReservedPrize = p;
+        }
     }
 
+    private bool MainPrizeIsReplaceable => !MainPrizeIsLocked && (MainPrize is null || MainPrize.IsReplaceable);
 
     void FixedUpdate()
     {
-        if (Prize is object)
+        if (MainPrize is object)
         {
-            var result = Prize.Update(Time.deltaTime);
+            var result = MainPrize.Update(Time.deltaTime);
             if ((result & IPrize.UpdateResult.PrizeRetired) != 0)
-                Prize = null;
+            {
+                MainPrize = ReservedPrize;
+                ReservedPrize = null;
+            }
+        }
+
+        if (ReservedPrize is object && MainPrizeIsReplaceable)
+        {
+            MainPrize = ReservedPrize;
+            ReservedPrize = null;
         }
     }
 
     private Vector3[] m_poses = new Vector3[5];
+    private bool m_mainPrizeIsLocked;
 
     [field: SerializeField]
     public float InfinityPrewiewDistance { get; private set; } = 10f;
@@ -67,10 +98,10 @@ public class PrizeHost : MonoBehaviour
     public void EnableApplyPreview(Vector2 direction)
     {
         Vector2 directionNormalized = direction.normalized;
-        
+
         LineRenderer.enabled = true;
 
-        float length = m_prize.PreviewDistance(direction);
+        float length = m_mainPrize.PreviewDistance(direction);
 
         if (float.IsInfinity(length))
         {

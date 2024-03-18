@@ -42,7 +42,7 @@ public class AimAIAction<T> : AIAction
 
     public override bool CanHandle()
     {
-        return Host.Prize is T;
+        return Host.MainPrize is T;
     }
 
     public override Func<float, bool> CreateHandler()
@@ -54,10 +54,10 @@ public class AimAIAction<T> : AIAction
         {
             Host.DisableApplyView();
 
-            if (Host.Prize is null)
+            if (Host.MainPrize is null)
                 return false;
 
-            if (!Host.PrizeAccessed)
+            if (!Host.MainPrizeAccessed)
                 return true; // Wait until access.
 
 
@@ -93,7 +93,7 @@ public class AimAIAction<T> : AIAction
             if (someSelected)
             {
                 direction.Normalize();
-                float _01 = Host.Prize.PreviewDistance(direction);
+                float _01 = Host.MainPrize.PreviewDistance(direction);
 
                 if (_01 <= float.Epsilon)
                 {

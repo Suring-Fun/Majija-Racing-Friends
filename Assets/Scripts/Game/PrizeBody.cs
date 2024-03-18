@@ -20,6 +20,8 @@ public interface IPrize
 
     public bool IsApplyable { get; }
 
+    public bool IsReplaceable { get; }
+
     public float Amount { get; }
 
     public PrizeApplyMode ApplyMode { get; }
@@ -38,8 +40,9 @@ public abstract class PrizeCreator : ScriptableObject
     [field: SerializeField]
     private float[] ProbabilityFromLastToFirst;
 
-    public float CalculateProbabilityForCurrentPlace(int curr, int total) {
-        int currInd  = curr * (ProbabilityFromLastToFirst.Length - 1) / (total - 1);
+    public float CalculateProbabilityForCurrentPlace(int curr, int total)
+    {
+        int currInd = curr * (ProbabilityFromLastToFirst.Length - 1) / (total - 1);
         return ProbabilityFromLastToFirst[ProbabilityFromLastToFirst.Length - 1 - currInd];
     }
 
