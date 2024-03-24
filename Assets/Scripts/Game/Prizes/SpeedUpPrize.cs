@@ -88,4 +88,9 @@ public class SpeedUpPrize : IPrize
     {
         return float.PositiveInfinity;
     }
+
+    public Vector2 PreviewDirection(Vector2 direction)
+    {
+        return Vector2.up;
+    }
 }

@@ -112,4 +112,9 @@ public class LungePrize : IPrize
 
         return IPrize.UpdateResult.None;
     }
+
+    public Vector2 PreviewDirection(Vector2 direction)
+    {
+        return direction.normalized;
+    }
 }

@@ -228,6 +228,7 @@ MonoBehaviour:
   <MinStaySpeed>k__BackingField: 5
   <RotationSpeed>k__BackingField: 512
   CollisionShockedThreshold: 2
+  <ShockLimit>k__BackingField: 2
   ShockWithTagWhenIgnoreShocks: Animal
   <TurnOffColliderTime>k__BackingField: 0.5
 --- !u!114 &2728841761011791688
@@ -410,7 +411,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4550505178368565865}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -418,7 +419,7 @@ Transform:
   - {fileID: 2529733972261823897}
   m_Father: {fileID: 891383468352303316}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6524768157310547323
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 6524768157310547323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 3.3507535, y: 3.3507535, z: 6.701507}
+  m_LocalScale: {x: 2.15, y: 2.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1311570027201636021}
@@ -492,7 +493,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1439457878, guid: 1545d60fdd8bed6b298a5267123fce65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ab18efec97767db490fe7e4727d1f36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -529,7 +530,7 @@ Transform:
   m_GameObject: {fileID: 8439497090995093691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 3.3507535, y: 3.3507535, z: 6.701507}
+  m_LocalScale: {x: 2.15, y: 2.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7586645753777016728}
@@ -576,7 +577,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -463589045, guid: 1545d60fdd8bed6b298a5267123fce65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e52f9adff7e42082ca04e28182468578, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -611,7 +612,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8737402543529526443}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -619,7 +620,7 @@ Transform:
   - {fileID: 4001464905198409981}
   m_Father: {fileID: 891383468352303316}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8400936458982212242
 Animator:
   serializedVersion: 4
@@ -693,6 +694,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2017999685506015982, guid: 7476a3b028e7a9b5c823a13e37619576, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728839689912620874, guid: 7476a3b028e7a9b5c823a13e37619576, type: 3}
+      propertyPath: RunAroundCars
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8728839689912620874, guid: 7476a3b028e7a9b5c823a13e37619576, type: 3}

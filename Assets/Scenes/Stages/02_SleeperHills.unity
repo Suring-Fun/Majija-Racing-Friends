@@ -3930,9 +3930,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 45967673482772914, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: LookForwardValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967673482772914, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidDumpingFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967673482772914, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidRotationFactor
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967673482772914, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: PresserRotationFactor
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674399061780, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: LookForwardValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674399061780, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidDumpingFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674399061780, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidRotationFactor
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674399061780, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: PresserRotationFactor
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674920911984, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: LookForwardValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674920911984, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidDumpingFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674920911984, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidRotationFactor
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 45967674920911984, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: PresserRotationFactor
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290686896600027002, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: LookForwardValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290686896600027002, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidDumpingFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290686896600027002, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidRotationFactor
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290686896600027002, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: PresserRotationFactor
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 8396271059833201054, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
       propertyPath: field of view
-      value: 46.82645
+      value: 51.11676
       objectReference: {fileID: 0}
     - target: {fileID: 8396271059833201054, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
       propertyPath: orthographic size
@@ -3985,6 +4049,22 @@ PrefabInstance:
     - target: {fileID: 8396271059916659382, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551771302762595484, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: LookForwardValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551771302762595484, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidDumpingFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551771302762595484, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: AvoidRotationFactor
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551771302762595484, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}
+      propertyPath: PresserRotationFactor
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e09745d8e7ab56cb87f80c1bce42aa, type: 3}

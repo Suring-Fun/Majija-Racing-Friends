@@ -70,4 +70,7 @@ public class PuddlePrize : IPrize
 
         return IPrize.UpdateResult.None;
     }
+
+    public Vector2 PreviewDirection(Vector2 direction)
+        => direction.normalized;
 }

@@ -277,6 +277,12 @@ MonoBehaviour:
   PosMinChangeSpeed: 10
   PosMaxChangeSpeed: 20
   LookForwardValue: 15
+  RunAroundCars: 1
+  DangerousRadius: 16
+  PresserRadius: 24
+  AvoidRotationFactor: 0.35
+  PresserRotationFactor: 0.35
+  AvoidDumpingFactor: 1.5
 --- !u!114 &5549795202340382409
 MonoBehaviour:
   m_ObjectHideFlags: 0

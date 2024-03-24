@@ -32,6 +32,8 @@ public interface IPrize
 
     float PreviewDistance(Vector2 direction);
 
+    Vector2 PreviewDirection(Vector2 direction);
+
     event Action<IPrize> PrizeChanged;
 }
 

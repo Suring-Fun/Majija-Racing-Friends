@@ -53,6 +53,7 @@ public class PlayerMousePrizeController : MonoBehaviour
             Vector2 directionNormalized = direction.normalized;
 
             float _01 = m_prizeHost.MainPrize.PreviewDistance(directionNormalized);
+            directionNormalized = m_prizeHost.MainPrize.PreviewDirection(directionNormalized);
             if (float.IsFinite(_01))
             {
                 directionNormalized *= Mathf.Clamp01(direction.magnitude / _01);

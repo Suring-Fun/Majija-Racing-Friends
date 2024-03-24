@@ -60,6 +60,10 @@ public class PlayerTouchPrizeController : MonoBehaviour
 
     }
 
+    private void OnDisable() {
+        ShowIcon();
+    }
+
     private StickProfile FindStickProfileFor(IPrize.PrizeApplyMode mode)
     {
         for (int x = 0; x < m_stickProfiles.Length; ++x)

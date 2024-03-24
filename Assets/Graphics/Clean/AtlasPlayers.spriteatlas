@@ -41,6 +41,9 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 2712a6215fb9dbec5a1541ada018959c, type: 3}
+  - {fileID: 773707392, guid: 28584ad1ea62cfd90b3561efeb1223e3, type: 3}
+  - {fileID: 2099892171, guid: 28584ad1ea62cfd90b3561efeb1223e3, type: 3}
+  - {fileID: 1402699431, guid: 28584ad1ea62cfd90b3561efeb1223e3, type: 3}
   - {fileID: 21300000, guid: 681bb132fedecbc0c8ab76af35cdde0a, type: 3}
   - {fileID: 21300000, guid: 13f0c123f7a752544808ea567cc81a3e, type: 3}
   - {fileID: -1185184576, guid: 8af781ca4c1cefe2aaceaa55db9c08d8, type: 3}
@@ -58,6 +61,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a880b28b2eec07cc3b753c1ba8ae7a28, type: 3}
   m_PackedSpriteNamesToIndex:
   - AutoBullet
+  - GolfiCar_CUTE_1
+  - GolfiCar_CUTE_0
+  - GolfiCar_CUTE_2
   - RudderPart
   - BodyPart
   - GolfiCar_1

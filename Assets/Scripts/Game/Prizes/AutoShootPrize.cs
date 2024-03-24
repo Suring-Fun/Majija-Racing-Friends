@@ -19,9 +19,13 @@ public class AutoShootPrize : IPrize
 
     private Transform m_car;
 
+    private Movenment m_movenment;
+
     public AutoShootPrize(Transform car, Sprite icon, AutoBullet prefab)
     {
         m_car = car;
+        m_movenment = car.GetComponent<Movenment>();
+
         Prefab = prefab;
         Icon = icon;
     }
@@ -49,4 +53,8 @@ public class AutoShootPrize : IPrize
 
         return IPrize.UpdateResult.None;
     }
+
+
+    public Vector2 PreviewDirection(Vector2 direction)
+        => Vector2.up;
 }

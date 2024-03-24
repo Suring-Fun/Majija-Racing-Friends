@@ -5,23 +5,35 @@ public class SimplePauseMaker : MonoBehaviour
     public GameObject Overlay;
     public string MenuSceneName = "MenuScene";
 
-    public void Pause() {
+    public void Pause()
+    {
         Overlay.SetActive(true);
         Time.timeScale = 0f;
     }
 
-    public void Resume() {
+    public void Resume()
+    {
         Overlay.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    public void Restart() {
+    public void Restart()
+    {
         Time.timeScale = 1f;
         SceneTransitionManager.Main.LaunchSceneTransition(SceneTransitionManager.Main.CurrentScene);
     }
 
-    public void ExitToMenu() {
+    public void ExitToMenu()
+    {
         Time.timeScale = 1f;
         SceneTransitionManager.Main.LaunchSceneTransition(MenuSceneName);
     }
+
+#if !UNITY_WEBGL && !UNITY_EDITOR
+    public void OnApplicationFocus(bool pause)
+    {
+        if (!pause)
+            Pause();
+    }
+#endif
 }

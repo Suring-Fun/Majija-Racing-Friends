@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 1138672287688642433}
   - component: {fileID: 1138672287688642432}
   - component: {fileID: 1138672287688642436}
+  - component: {fileID: 197809943768886508}
   m_Layer: 5
   m_Name: ControlsCanvas
   m_TagString: Untagged
@@ -475,6 +476,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd659a4fe375fc588b271c5bb43f3e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &197809943768886508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138672287688642435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6d637999ca35ae584ddd018ea942b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Animator>k__BackingField: {fileID: 8934799918626714175}
+  <MainPrizeAppearenceBehaviour>k__BackingField:
+    <LayerIndex>k__BackingField: 0
+    <AppearingStateName>k__BackingField: MainAppearing
+    <ReusingStateName>k__BackingField: MainReusing
+    <HidingStateName>k__BackingField: MainDisappearing
+    <ReplacingStateName>k__BackingField: 
+    <HiddenStateName>k__BackingField: MainHidden
+    <ReplacingTime>k__BackingField: 0.5
+    m_iconImages:
+    - {fileID: 1138672288573168397}
+    - {fileID: 1138672288983620782}
+  <ReservedPrizeAppearenceBehaviour>k__BackingField:
+    <LayerIndex>k__BackingField: 1
+    <AppearingStateName>k__BackingField: ReservedAppearing
+    <ReusingStateName>k__BackingField: ReservedReusing
+    <HidingStateName>k__BackingField: ReservedDisappearing
+    <ReplacingStateName>k__BackingField: ReservedReplacing
+    <HiddenStateName>k__BackingField: ReservedHidden
+    <ReplacingTime>k__BackingField: 0.5
+    m_iconImages:
+    - {fileID: 4803374366661722414}
+  m_fillImages:
+  - {fileID: 1138672288201255156}
+  - {fileID: 1138672288983620782}
 --- !u!1 &1138672287691441497
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +817,6 @@ GameObject:
   - component: {fileID: 1138672288045836795}
   - component: {fileID: 1138672288045836793}
   - component: {fileID: 1138672288045836792}
-  - component: {fileID: 1138672288045836798}
   m_Layer: 0
   m_Name: PlayerTouchController
   m_TagString: Untagged
@@ -880,43 +917,6 @@ MonoBehaviour:
       width: 2
       height: 1
     <Substrate>k__BackingField: {fileID: 1138672288579660121}
---- !u!114 &1138672288045836798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138672288045836794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e6d637999ca35ae584ddd018ea942b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Animator>k__BackingField: {fileID: 8934799918626714175}
-  <MainPrizeAppearenceBehaviour>k__BackingField:
-    <LayerIndex>k__BackingField: 0
-    <AppearingStateName>k__BackingField: MainAppearing
-    <ReusingStateName>k__BackingField: MainReusing
-    <HidingStateName>k__BackingField: MainDisappearing
-    <ReplacingStateName>k__BackingField: 
-    <HiddenStateName>k__BackingField: MainHidden
-    <ReplacingTime>k__BackingField: 0.5
-    m_iconImages:
-    - {fileID: 1138672288573168397}
-    - {fileID: 1138672288983620782}
-  <ReservedPrizeAppearenceBehaviour>k__BackingField:
-    <LayerIndex>k__BackingField: 1
-    <AppearingStateName>k__BackingField: ReservedAppearing
-    <ReusingStateName>k__BackingField: ReservedReusing
-    <HidingStateName>k__BackingField: ReservedDisappearing
-    <ReplacingStateName>k__BackingField: ReservedReplacing
-    <HiddenStateName>k__BackingField: ReservedHidden
-    <ReplacingTime>k__BackingField: 0.5
-    m_iconImages:
-    - {fileID: 4803374366661722414}
-  m_fillImages:
-  - {fileID: 1138672288201255156}
-  - {fileID: 1138672288983620782}
 --- !u!1 &1138672288186933274
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9919c85d442b9b2a3a5e7a88705ee4, type: 3}
   m_Name: YouMustBeFirstToBeLeader
   m_EditorClassIdentifier: 
-  <DefaultValue>k__BackingField: "\u0427\u0422\u041E\u0411\u042B \u041F\u041E\u0411\u0415\u0414\u0418\u0422\u042C,
-    \u0412\u042B \u0414\u041E\u041B\u0416\u041D\u042B \u0411\u042B\u0422\u042C \u041F\u0415\u0420\u0412\u042B\u041C."
+  <DefaultValue>k__BackingField: "\u0411\u0423\u0414\u042C\u0422\u0415 \u041F\u0415\u0420\u0412\u042B\u041C
+    \u0414\u041B\u042F \u041F\u041E\u0411\u0415\u0414\u042B."
