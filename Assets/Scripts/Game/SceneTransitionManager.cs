@@ -9,7 +9,20 @@ public class SceneTransitionManager : MonoBehaviour
     public SceneTransitionManager() => Main = this;
 
     [field: SerializeField]
-    public GameObject Curtains { get; private set; }
+    public GameObject LoadingScreen { get; private set; }
+
+    [field: SerializeField]
+    public Animator Curtains { get; private set; }
+
+    [field: SerializeField]
+    public string CurtainsEntrence = "Enterence";
+    
+    [field: SerializeField]
+    public string CurtainsExit = "Exit";
+
+    [field: SerializeField]
+    public float TransitionTime = 0.5f;
+    
 
     private bool m_isLoading = false;
     private string m_lastLoadedScene = null;
@@ -19,7 +32,15 @@ public class SceneTransitionManager : MonoBehaviour
     IEnumerator LoadingCoroutine(string scene)
     {
         m_isLoading = true;
-        Curtains.SetActive(true);
+        Curtains.gameObject.SetActive(true);
+        Curtains.Play(CurtainsEntrence, 0);
+
+        yield return new WaitForSeconds(TransitionTime);
+        yield return null;
+        yield return null;
+
+        Curtains.gameObject.SetActive(false);
+        LoadingScreen.SetActive(true);
 
         if (m_lastLoadedScene is not null)
             yield return SceneManager.UnloadSceneAsync(m_lastLoadedScene);
@@ -29,7 +50,17 @@ public class SceneTransitionManager : MonoBehaviour
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene));
 
-        Curtains.SetActive(false);  
+        yield return null;
+        yield return null;
+        
+        LoadingScreen.SetActive(false);
+
+        Curtains.gameObject.SetActive(true);
+        Curtains.Play(CurtainsExit, 0);
+
+        yield return new WaitForSeconds(TransitionTime);
+
+        Curtains.gameObject.SetActive(false);
         m_isLoading = false;
     }
 

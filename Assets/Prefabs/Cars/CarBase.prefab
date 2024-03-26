@@ -264,6 +264,7 @@ MonoBehaviour:
   <MinStaySpeed>k__BackingField: 5
   <RotationSpeed>k__BackingField: 512
   CollisionShockedThreshold: 2
+  <ShockLimit>k__BackingField: 1
   ShockWithTagWhenIgnoreShocks: Animal
   <TurnOffColliderTime>k__BackingField: 0.5
 --- !u!114 &891383469467520492

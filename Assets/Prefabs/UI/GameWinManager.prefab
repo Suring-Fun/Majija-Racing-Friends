@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTag: Player
-  <TargetLaps>k__BackingField: 5
+  <TargetLaps>k__BackingField: 3
   GameOverOverlay: {fileID: 5205917324735712021}
   GameWonOverlay: {fileID: 5205917325277924323}
   WinScreenTime: 4
