@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9919c85d442b9b2a3a5e7a88705ee4, type: 3}
   m_Name: BridgeName
   m_EditorClassIdentifier: 
-  <DefaultValue>k__BackingField: "\u041C\u043E\u0441\u0442 \u0420\u0430\u0441\u043F\u0438\u043B\u0430"
+  <DefaultValue>k__BackingField: "\u041C\u043E\u0441\u0442 \u041F\u0440\u043E\u043A\u043B\u044F\u0442\u043E\u0433\u043E"

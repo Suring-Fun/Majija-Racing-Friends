@@ -12,7 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
   m_Name: 02_Hills
   m_EditorClassIdentifier: 
-  <Cover>k__BackingField: {fileID: 21300000, guid: 2b0e828e93f979f74b658f16f26cb920, type: 3}
+  <CoverAnimation>k__BackingField:
+  - {fileID: 21300000, guid: c84e0b95cea1f8943b590416bc21b8ab, type: 3}
+  - {fileID: 21300000, guid: 29511c46c9b38a55793d22032528dd2d, type: 3}
+  - {fileID: 21300000, guid: e107cdeb288ccbaa9aa062c8da6c7d2b, type: 3}
+  - {fileID: 21300000, guid: 96c06dfe9c13263ae821baf187d55431, type: 3}
+  - {fileID: 21300000, guid: d3eafac481231fefaa07989bef45e108, type: 3}
+  - {fileID: 21300000, guid: 68cd1f1b25957e6c4896d143d5276d64, type: 3}
+  - {fileID: 21300000, guid: de38cf979486d2581a063aa52b5b21fa, type: 3}
+  - {fileID: 21300000, guid: 658ac623271edecd6a03e0d9099bb87a, type: 3}
+  - {fileID: 21300000, guid: f2b92f0f23217a340a190cfa1bafd755, type: 3}
+  - {fileID: 21300000, guid: 2d83231344a8f7a4abd5b91ea8b998b5, type: 3}
+  - {fileID: 21300000, guid: 18ccddbf414564d4b80ad067bc03f416, type: 3}
+  - {fileID: 21300000, guid: 7a143e47bdd5a7b078bae6019a80fb80, type: 3}
+  - {fileID: 21300000, guid: 06e9f3669f3827fb381312ade209b2a2, type: 3}
+  - {fileID: 21300000, guid: 597cd70b827fb3b95a065484323299e3, type: 3}
+  - {fileID: 21300000, guid: a0a06806583304420ad3167445e8610b, type: 3}
+  - {fileID: 21300000, guid: 6041090ea8fc965cab66bab85bd3bcf8, type: 3}
+  - {fileID: 21300000, guid: e683b9fe88fa504648b8b44bdae2bb26, type: 3}
+  - {fileID: 21300000, guid: cd235d4512ea5ed12b51e15fa738b6e4, type: 3}
+  - {fileID: 21300000, guid: 9bb15d3b44f31738d9d13c68c6e21a49, type: 3}
+  - {fileID: 21300000, guid: 297e2bf8f32633581b8a28b13a73dc68, type: 3}
+  - {fileID: 21300000, guid: f9edb5e91f577608ca08cae857ec3316, type: 3}
+  - {fileID: 21300000, guid: aeb4cd12dda7faa948428e07a4c075f8, type: 3}
+  - {fileID: 21300000, guid: 155871c4c976f8dadacb47c95f6c67ba, type: 3}
+  - {fileID: 21300000, guid: 7c3ebbb5bacdedd89ae8074bcb7bc29a, type: 3}
+  - {fileID: 21300000, guid: 58cdd0d2b066d465dafa8766985652aa, type: 3}
+  - {fileID: 21300000, guid: cbd6f89e8b33fc4db8be9677201c1e6f, type: 3}
+  - {fileID: 21300000, guid: fe0b194663d1e69c3a48561fc12a4790, type: 3}
+  - {fileID: 21300000, guid: 51d7b80ef9b45b9569e9a248d08a2e82, type: 3}
+  - {fileID: 21300000, guid: 1db1a339a93502066adac20bea9d3bd8, type: 3}
+  - {fileID: 21300000, guid: a5fb41ec1899acca3a658597fce853a6, type: 3}
+  - {fileID: 21300000, guid: cb200b10a959e49fe9b2a1244669f948, type: 3}
+  - {fileID: 21300000, guid: 9a1cbb501c664d88e9ee50b1ca771536, type: 3}
+  - {fileID: 21300000, guid: 6e44c38be4fd5f390b6a4b7ad7940bf4, type: 3}
+  - {fileID: 21300000, guid: 91f21f5164d83c8288b244a2cd47277e, type: 3}
+  - {fileID: 21300000, guid: cc6076b7b5d1aff47816fe442592f403, type: 3}
+  - {fileID: 21300000, guid: 1f81d537403c2dce0846e03dac2c24a9, type: 3}
+  - {fileID: 21300000, guid: 3ebd3410c22f3fb76b5bf7bd14867a75, type: 3}
+  - {fileID: 21300000, guid: 59d34284f24c2aca880005a83a499d6e, type: 3}
+  - {fileID: 21300000, guid: 875d87f840bf14534abed1f38ec1b451, type: 3}
+  - {fileID: 21300000, guid: c28d1dc59619276688216e6b024f70bf, type: 3}
+  - {fileID: 21300000, guid: 4d345c92c566ecbdfbb5c3d5c420e599, type: 3}
+  - {fileID: 21300000, guid: 059268a9ad042d23c90088d838f3da4e, type: 3}
+  - {fileID: 21300000, guid: fe64acf4c5b0ebfe79e7bf22cac072fa, type: 3}
+  - {fileID: 21300000, guid: 99ad7c2b673cc3da0891cc4591d3913c, type: 3}
+  - {fileID: 21300000, guid: 1f4268f44097ae4008668d03734632a3, type: 3}
+  - {fileID: 21300000, guid: e2e6cf44ced19831bb79490e2c557b1c, type: 3}
+  - {fileID: 21300000, guid: 4cedd966689c0ad368ca9c978fffba20, type: 3}
+  - {fileID: 21300000, guid: 79a684a81ae6f91b88f40058f243908d, type: 3}
   <StageName>k__BackingField: {fileID: 11400000, guid: ea202103c4d1c8b428e6505fb0db5144, type: 2}
   <SceneName>k__BackingField: 02_SleeperHills
   <LevelRequired>k__BackingField: 2

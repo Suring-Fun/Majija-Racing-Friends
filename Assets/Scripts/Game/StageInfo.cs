@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "StageInfo", fileName = "StageInfo")]
 public class StageInfo : ScriptableObject
 {
-    [field: SerializeField] public Sprite Cover { get; private set; }
+    [field: SerializeField] public Sprite[] CoverAnimation { get; private set; }
 
     [field: SerializeField] public LocalizedString StageName { get; private set; }
 

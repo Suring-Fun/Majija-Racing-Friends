@@ -30,10 +30,14 @@ public class StageSelectionManager : MonoBehaviour
         SelectButton(m_buttons[Mathf.Clamp(PlayerProgress.Main.PlayerLevel, 0, m_buttons.Length - 1)]);
     }
 
+    private Sprite[] m_currentCoverAnimation;
+
+    // [field: SerializeField]
+
     private void UdpateInfo(StageInfo stageInfo)
     {
         Info = stageInfo;
-        StageCoverContainer.sprite = stageInfo.Cover;
+        m_currentCoverAnimation = stageInfo.CoverAnimation;
         StageLabelContainer.text = stageInfo.StageName;
 
         
@@ -57,5 +61,7 @@ public class StageSelectionManager : MonoBehaviour
     void Update() {
         Sprite[] anim = Info.SpritesOfCharacter;
         CharContainer.sprite = anim[(int)(Time.time / SecondsPerFrame) % anim.Length];
+
+        StageCoverContainer.sprite = m_currentCoverAnimation[(int)(Time.time / SecondsPerFrame) % m_currentCoverAnimation.Length];
     }
 }

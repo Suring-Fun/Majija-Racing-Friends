@@ -12,7 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
   m_Name: 03_Forest
   m_EditorClassIdentifier: 
-  <Cover>k__BackingField: {fileID: 21300000, guid: a1805d3571c8dad96a5191dc841cc2e6, type: 3}
+  <CoverAnimation>k__BackingField:
+  - {fileID: 21300000, guid: 7f67a466cc999e4eda3e64938fa03889, type: 3}
+  - {fileID: 21300000, guid: 1da2b4dad41e4c50393339b03dc27cb8, type: 3}
+  - {fileID: 21300000, guid: 8d28e2f79fac2cd59b56f5fc5f96c4d7, type: 3}
+  - {fileID: 21300000, guid: 6cc1f7672f581ad329b51e90a989cf71, type: 3}
+  - {fileID: 21300000, guid: f8f2be99557a458a6844a6ba9b121a85, type: 3}
+  - {fileID: 21300000, guid: 57ae6f89138959591b4b62c652cfbdd3, type: 3}
+  - {fileID: 21300000, guid: 9ac115212ca5c3b28a2e4e275c20c309, type: 3}
+  - {fileID: 21300000, guid: f30f21a05f15133c99c1396946e09c6e, type: 3}
+  - {fileID: 21300000, guid: a8987cb7ef1c03235b26f4c36f1fb529, type: 3}
+  - {fileID: 21300000, guid: ee1b795d395ac116f8d3506283cac9b6, type: 3}
+  - {fileID: 21300000, guid: 4687ce307b57857869fc8b8851f4bc60, type: 3}
+  - {fileID: 21300000, guid: 0f834866a5c053225b5b9bc605ce6503, type: 3}
+  - {fileID: 21300000, guid: 21112577e749f8df7a68e3c5c55dd8bd, type: 3}
+  - {fileID: 21300000, guid: eb590bc323add1db88a7cb5161a6e20a, type: 3}
+  - {fileID: 21300000, guid: 8c60b8811a3841b41bad88dbc49652e6, type: 3}
+  - {fileID: 21300000, guid: 60f98de27f81e31c3bb0c9a35aa66bf7, type: 3}
+  - {fileID: 21300000, guid: afaec759201a4b4a4b7efae76894082b, type: 3}
+  - {fileID: 21300000, guid: 61e49d0cebb5461c1a697f0c08b3b807, type: 3}
+  - {fileID: 21300000, guid: 972682a792f727998b6ba45eae6c43cc, type: 3}
+  - {fileID: 21300000, guid: fbe4635f70ce7bfffb87aff4cf4e3952, type: 3}
+  - {fileID: 21300000, guid: 745179266ca100229b7a5aeb5500ba40, type: 3}
+  - {fileID: 21300000, guid: aa01c4edf87f8bcfe8915bf650510433, type: 3}
+  - {fileID: 21300000, guid: 78a973d81200806b78202b17989d9624, type: 3}
+  - {fileID: 21300000, guid: 1e09bb37fbf94458aa31304623b2aa86, type: 3}
+  - {fileID: 21300000, guid: e528937c16441266c8593ca1d9ed9032, type: 3}
+  - {fileID: 21300000, guid: 0d3892828f8c744498c5822472f98bf2, type: 3}
+  - {fileID: 21300000, guid: 30eabeb4e8fa19131a37f513ac395fad, type: 3}
+  - {fileID: 21300000, guid: 125a87ccffe892070af372abda08a3cc, type: 3}
+  - {fileID: 21300000, guid: 6a56265c3855009fcbdab5a72757c726, type: 3}
+  - {fileID: 21300000, guid: ec365e4bc9492bf4b90e528e8cfc3796, type: 3}
+  - {fileID: 21300000, guid: b3a2716f1165add298c4a3ae9c3d0cd1, type: 3}
+  - {fileID: 21300000, guid: 8b469c25e2adc5da88798359db04d7e8, type: 3}
+  - {fileID: 21300000, guid: e6918879b1c2e4cdd826d9d8ba3a189e, type: 3}
+  - {fileID: 21300000, guid: c94951e31b94693948cdd75fb35a5011, type: 3}
+  - {fileID: 21300000, guid: 3f2662387e86cd2a48b1c59b9ed5c458, type: 3}
+  - {fileID: 21300000, guid: 9468dc5374b47147abefecd2f3d4a8ac, type: 3}
+  - {fileID: 21300000, guid: 9e56c2398b94fad599158c70a2703bf9, type: 3}
+  - {fileID: 21300000, guid: 81a304f61cc5588419e828d0cd25f0a0, type: 3}
+  - {fileID: 21300000, guid: f7931f4647200f60db6fb1f103ed2ff6, type: 3}
+  - {fileID: 21300000, guid: 078252282e970440989ce24c22c84dd3, type: 3}
+  - {fileID: 21300000, guid: 04549169801b19192b2434324af6f6ab, type: 3}
+  - {fileID: 21300000, guid: cee0006e5daf50af5b76c63c3b22fb20, type: 3}
+  - {fileID: 21300000, guid: 66b3e24e466a8213bba3dd199883c8a6, type: 3}
+  - {fileID: 21300000, guid: 5bbcceffaa9438b8382b3f3f40490b8f, type: 3}
+  - {fileID: 21300000, guid: 4c95891644287c0f5b15ece9c16e2a2e, type: 3}
+  - {fileID: 21300000, guid: 5f5d751493aae4d8c9707e16a3f90849, type: 3}
+  - {fileID: 21300000, guid: 228078b690870639e9256eac7bd7f0a5, type: 3}
+  - {fileID: 21300000, guid: cc8aa9906c93aa99f8af0216991d3e04, type: 3}
   <StageName>k__BackingField: {fileID: 11400000, guid: 9bcec90acd6c68e1ab702779e3c6c29e, type: 2}
   <SceneName>k__BackingField: 03_GolfyForest
   <LevelRequired>k__BackingField: 3

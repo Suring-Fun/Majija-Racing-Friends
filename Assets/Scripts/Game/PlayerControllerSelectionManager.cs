@@ -21,12 +21,13 @@ public class PlayerControllerSelectionManager : MonoBehaviour
     public void Awake() {
         GameObject prefab = StandaloneVer;
         #if UNITY_EDITOR
+        Debug.LogWarning("Select control based on platform using appropriate");
         prefab = UseMobileInEditor ? MobileVer : StandaloneVer;
         #elif UNITY_ANDROID
         prefab = MobileVer;
+        #else
+        prefab = Application.isMobilePlatform ? MobileVer : StandaloneVer;
         #endif
-
-        Debug.LogWarning("Select control based on platform");
 
         m_current = Instantiate(prefab, transform, false);
     }

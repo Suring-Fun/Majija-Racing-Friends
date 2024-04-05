@@ -12,7 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
   m_Name: 01_Bridge
   m_EditorClassIdentifier: 
-  <Cover>k__BackingField: {fileID: 21300000, guid: f41824594ca6e746887ffc1683c51e96, type: 3}
+  <CoverAnimation>k__BackingField:
+  - {fileID: 21300000, guid: 9db22a544dbee3a2b833dd6f53ffc09d, type: 3}
+  - {fileID: 21300000, guid: e2bf4ad8501c91056a5e34f4cee4801f, type: 3}
+  - {fileID: 21300000, guid: 866afdb5ff55055c6a0f8659983b4a62, type: 3}
+  - {fileID: 21300000, guid: 3ddbee08c9ff657c098cb651f8900561, type: 3}
+  - {fileID: 21300000, guid: 3be25a3e4478f7393b4fd18dec2879e4, type: 3}
+  - {fileID: 21300000, guid: 91ded848b6f17abe082dc2cd9fabf5e2, type: 3}
+  - {fileID: 21300000, guid: e0f7155c88c7ed611821adca1ddf18f7, type: 3}
+  - {fileID: 21300000, guid: 024566138b459b4d4b81988a1471698d, type: 3}
+  - {fileID: 21300000, guid: 72f925bd16c0055c782eef52665dabd4, type: 3}
+  - {fileID: 21300000, guid: 150de520f77e827478fd01596e93a9e0, type: 3}
+  - {fileID: 21300000, guid: c3cb2bafa0fa1aafeb9bc59eab8f6d63, type: 3}
+  - {fileID: 21300000, guid: 001fae958ccd4cea7a71f52aef83dc32, type: 3}
+  - {fileID: 21300000, guid: 67fa1ad26941b05afb9c7bffff417f5b, type: 3}
+  - {fileID: 21300000, guid: 827cd059bbedf586ebc10e92195adb42, type: 3}
+  - {fileID: 21300000, guid: 9a2127fdaf5ae49418542606135fa39a, type: 3}
+  - {fileID: 21300000, guid: 5ed5296e8b55fcaddad43f8af76be16d, type: 3}
+  - {fileID: 21300000, guid: c24a712a34745d20198fd703f2d13f31, type: 3}
+  - {fileID: 21300000, guid: 9bdeadc0e3c5d94ac858ffb79f5fe60f, type: 3}
+  - {fileID: 21300000, guid: 869720b2a9ca03565949662ed9470256, type: 3}
+  - {fileID: 21300000, guid: 86881dd543ba56db1b6457b6ed3579d0, type: 3}
+  - {fileID: 21300000, guid: cc804dcd964287c4993a9fd8b58174a3, type: 3}
+  - {fileID: 21300000, guid: 7b5e9a6476adf7bcabd4adb8a191d598, type: 3}
+  - {fileID: 21300000, guid: bd1d0d0844f8945ba81b5acedc0f15d8, type: 3}
+  - {fileID: 21300000, guid: 5b6b90b8f3b33c27c8dfb23bc34aef1b, type: 3}
+  - {fileID: 21300000, guid: 8a0148774a7c5fc1baa9ad0f8cf1144b, type: 3}
+  - {fileID: 21300000, guid: 8b85713e99b6d615d9ca64572e24549c, type: 3}
+  - {fileID: 21300000, guid: ae11ec099c195caa880e5aaecedf4190, type: 3}
+  - {fileID: 21300000, guid: 56cf5b9e343787f648b781aa6380d440, type: 3}
+  - {fileID: 21300000, guid: e0a8d524d6b031ee0bd8ab789892adbe, type: 3}
+  - {fileID: 21300000, guid: 603c97547a0e74332be31c062c5cd6a5, type: 3}
+  - {fileID: 21300000, guid: a7c5781d53cd9cdd0995094b599d7e08, type: 3}
+  - {fileID: 21300000, guid: f71286b635073d8f08eedbec3bda8207, type: 3}
+  - {fileID: 21300000, guid: 019116a57eba35933ab8bb81238fbcd2, type: 3}
+  - {fileID: 21300000, guid: 20dc03f709d589bd3933abf1e7252cd6, type: 3}
+  - {fileID: 21300000, guid: 91ad36498d16e0d818ff4e341a40acc3, type: 3}
+  - {fileID: 21300000, guid: 332a3f6b4951d0843a7f57c204116f04, type: 3}
+  - {fileID: 21300000, guid: 751cf3b6118debb4aa0f3f8c5a48f783, type: 3}
+  - {fileID: 21300000, guid: 48fcfddae74fc1017b22f3749dcd1a38, type: 3}
+  - {fileID: 21300000, guid: 6c08150d6b1291728b199899401d3441, type: 3}
+  - {fileID: 21300000, guid: af4384844d8b2b6ababf163723fc0a97, type: 3}
+  - {fileID: 21300000, guid: 81bc6407cd9a10344beb1cf312f37604, type: 3}
+  - {fileID: 21300000, guid: e322f360c642e384187083a7091afd30, type: 3}
+  - {fileID: 21300000, guid: 70d5e0cfeab1aa5459a161ff687fb310, type: 3}
+  - {fileID: 21300000, guid: 3c4735f8ce9713a9d881eb5db3247eb0, type: 3}
+  - {fileID: 21300000, guid: 8ead60f1dfe39ee0d9734bb2a4e537a1, type: 3}
+  - {fileID: 21300000, guid: 6761b833c28d2d474b1005efa71915e7, type: 3}
+  - {fileID: 21300000, guid: 06002051459a3f7ffb942d98ef3cafb7, type: 3}
+  - {fileID: 21300000, guid: 1edcefe73627d2418ac5baf009b83e2a, type: 3}
   <StageName>k__BackingField: {fileID: 11400000, guid: aec25168a35de18ed9c4fa17869b6cf6, type: 2}
   <SceneName>k__BackingField: 01_RaspilBridge
   <LevelRequired>k__BackingField: 1

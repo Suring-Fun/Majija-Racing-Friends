@@ -12,7 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d7d65eb523b3854b8a330902da4a06, type: 3}
   m_Name: 00_Island
   m_EditorClassIdentifier: 
-  <Cover>k__BackingField: {fileID: 21300000, guid: ebb991da377b4be67a10a5dcddc0c211, type: 3}
+  <CoverAnimation>k__BackingField:
+  - {fileID: 21300000, guid: 78cf4de09533714288630ba1c21d1162, type: 3}
+  - {fileID: 21300000, guid: da1288f8ef64892139031098e2801312, type: 3}
+  - {fileID: 21300000, guid: ce0ca7feb44c50f309ee00fb621f9d61, type: 3}
+  - {fileID: 21300000, guid: 1be2d9f25909bae3ebd8766859c0eef5, type: 3}
+  - {fileID: 21300000, guid: f7940c99aed4d8bf8952d314e43089e6, type: 3}
+  - {fileID: 21300000, guid: 3543885f515dbf467bb244cc283c8626, type: 3}
+  - {fileID: 21300000, guid: 03946f6d68d7f1c61aeffe18dc94fb5a, type: 3}
+  - {fileID: 21300000, guid: 38b2461c46d800653bb64e8a30eaa47f, type: 3}
+  - {fileID: 21300000, guid: a5bb297116f7ba5449f3b9ec2baa30c6, type: 3}
+  - {fileID: 21300000, guid: 30489ceecceb780f79a55f7e1ea22d69, type: 3}
+  - {fileID: 21300000, guid: 4ad49943524e529f4b83944be398bc3b, type: 3}
+  - {fileID: 21300000, guid: e8601cd4fd7c31b9196c4666ad139098, type: 3}
+  - {fileID: 21300000, guid: 303a9bcc478a199c999a789825ed0c94, type: 3}
+  - {fileID: 21300000, guid: 2ddc06842ae16fc0483bf88b908d2f7f, type: 3}
+  - {fileID: 21300000, guid: 87592b9b2ef8d05049b0fd0c651bc81a, type: 3}
+  - {fileID: 21300000, guid: a49e8bc80a513a5eba32a1ddf9f38d91, type: 3}
+  - {fileID: 21300000, guid: 75771625ea6629fac890f93a76ef36b7, type: 3}
+  - {fileID: 21300000, guid: 395e1e227705a7e1d9fe4f54281b0012, type: 3}
+  - {fileID: 21300000, guid: c4500ec0f4515d0cf828fb22bbba7160, type: 3}
+  - {fileID: 21300000, guid: 05401da082716c2658841bcbb1660470, type: 3}
+  - {fileID: 21300000, guid: 72111358ef92c17d8b0a9d1e6a27da5e, type: 3}
+  - {fileID: 21300000, guid: d1ff818e9386d7edeabc982fb1faf3c7, type: 3}
+  - {fileID: 21300000, guid: 69750f35171c9f66bb2a19ad589875b5, type: 3}
+  - {fileID: 21300000, guid: e992aca8ff380922ca9734570edcfb29, type: 3}
+  - {fileID: 21300000, guid: 0f082e9484d7bcfe481fd218cccf19de, type: 3}
+  - {fileID: 21300000, guid: e840920befe0cb40cbc71fae27a84e88, type: 3}
+  - {fileID: 21300000, guid: 492e1107699de3491b54d45f036f6595, type: 3}
+  - {fileID: 21300000, guid: ccabca6a6e53c34cd9281cb536818c5b, type: 3}
+  - {fileID: 21300000, guid: ccea17671e637c35ea58344054e8db1f, type: 3}
+  - {fileID: 21300000, guid: 079514a07e61b5067b18d287157eff56, type: 3}
+  - {fileID: 21300000, guid: 748b5756026712dda847519c617ca435, type: 3}
+  - {fileID: 21300000, guid: 8baf53b988f037d488794af2d9793da2, type: 3}
+  - {fileID: 21300000, guid: 548470e124b0ddbc6a9dac0cd11d3167, type: 3}
+  - {fileID: 21300000, guid: afaf2725dec66d1789e8547e410363f0, type: 3}
+  - {fileID: 21300000, guid: 22eb65ac1821528039e6dd3cce055dd7, type: 3}
+  - {fileID: 21300000, guid: ad65d02000dfc9226b2a91a0921cc9dd, type: 3}
+  - {fileID: 21300000, guid: 6c7ef45b2987ef079a86537bf626b9c8, type: 3}
+  - {fileID: 21300000, guid: de5d026435f0995c9a341f9d2aace2e8, type: 3}
+  - {fileID: 21300000, guid: 739e1eecf248f03cca972b092cac1386, type: 3}
+  - {fileID: 21300000, guid: 2ae3859aa59f9c616bd95b518922433f, type: 3}
+  - {fileID: 21300000, guid: 27fb1fb9f768ba2c1bfee4b72222c392, type: 3}
+  - {fileID: 21300000, guid: 852002f3db3e621af87ad1dac7da8f56, type: 3}
+  - {fileID: 21300000, guid: 95155fa51ba685ccaaf8b3c8c90480c2, type: 3}
+  - {fileID: 21300000, guid: dd3a78cde175583db90d79385dc65fde, type: 3}
+  - {fileID: 21300000, guid: df3ad8c05d83945ffad3768c2f372be8, type: 3}
+  - {fileID: 21300000, guid: 29bb14fef39b2735bbe7b02aba4ab3fb, type: 3}
+  - {fileID: 21300000, guid: 5f5044d5324f93b999dbc32690350400, type: 3}
+  - {fileID: 21300000, guid: 955965d7c3eea9923aa49cea8ac931ca, type: 3}
   <StageName>k__BackingField: {fileID: 11400000, guid: cf99a8f85f409c54b85e20596e1f8cea, type: 2}
   <SceneName>k__BackingField: 00_RoadIsland
   <LevelRequired>k__BackingField: 0
