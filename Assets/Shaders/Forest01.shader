@@ -64,7 +64,7 @@ Shader "Unlit/Forest01"
                 float offset2 = (cos(i.uv.x * 300 + _Time.y * 6 + 5) + sin(i.uv.y * 300 + _Time.y * 6 + 5)) * 0.005;
 
 
-                fixed4 col2 = (0, 0, 0, 0);
+                fixed4 col2 = fixed4(0, 0, 0, 0);
                 
                 if(col.a > 0.5 + offset) {
                     col2 = float4(49 / 255.0, 80 / 255.0, 36 / 255.0, 1);

@@ -75,6 +75,7 @@ public class SpawnCollisionResolver : MonoBehaviour
 
         do
         {
+            UpdateBuffer();
             isResolved = true;
 
             for (int i1 = 0; i1 < m_allRescuable.Length - 1; ++i1)
@@ -88,7 +89,5 @@ public class SpawnCollisionResolver : MonoBehaviour
             ++repeats;
         }
         while (!isResolved && repeats < MaxRepeats);
-
-        UpdateBuffer();
     }
 }

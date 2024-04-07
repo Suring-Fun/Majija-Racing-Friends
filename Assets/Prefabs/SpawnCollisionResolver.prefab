@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6195b5bd3c273265a8fee2cdb7788e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SafeRadius: 5
-  Step: 0.5
-  MaxRepeats: 50
+  SafeRadius: 35
+  Step: 1
+  MaxRepeats: 300
