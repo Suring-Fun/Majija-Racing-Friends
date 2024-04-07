@@ -199,6 +199,8 @@ MonoBehaviour:
   CameraMoveTime: 1
   Min180DotResult: 0.5
   ReveseAngle: 0
+  SafeRadius: 10
+  OverlappingResolvingStep: 0.5
 --- !u!114 &891383469467520466
 MonoBehaviour:
   m_ObjectHideFlags: 0

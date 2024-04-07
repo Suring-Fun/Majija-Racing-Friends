@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class RescueableCar : MonoBehaviour
@@ -25,6 +26,9 @@ public class RescueableCar : MonoBehaviour
 
     public bool ReveseAngle = false;
 
+    public float SafeRadius = 5f;
+    public float OverlappingResolvingStep = 10f;
+
     private bool m_isSwimming;
     private bool m_rescuing;
 
@@ -32,9 +36,18 @@ public class RescueableCar : MonoBehaviour
     private Vector3 m_cumPos;
     private Quaternion m_cumVRot;
 
-    private Movenment.TrackingData m_dataToRescureWith;
+    private Movenment.TrackingData m_dataToRescueWith;
+
+    public Movenment.TrackingData DataToRescueWith
+    {
+        get => m_dataToRescueWith;
+        set => m_dataToRescueWith = value;
+    }
+
+    public bool IsDataToRescueWithLocked { get; private set; } = true;
 
     public bool IsResquing => m_rescuing;
+
     public bool IsSwimming => m_isSwimming;
 
     private void Awake()
@@ -49,24 +62,98 @@ public class RescueableCar : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Run rescue program with a given tracking data to teleport the car into.
+    /// </summary>
+    /// <param name="trackingData">Tracking data to resque.</param>
     public void RunRescueProgram(Movenment.TrackingData trackingData)
     {
         if (m_rescuing || m_isSwimming)
             return;
         m_rescuing = true;
-        m_dataToRescureWith = trackingData;
+        m_dataToRescueWith = trackingData;
+
         StartCoroutine(CumRescueProgram());
     }
+
+    /// <summary>
+    /// Constructs new tracking data which is changed to avoid collisions with other cars.
+    /// </summary>
+    /// <param name="trackingData"></param>
+    /// <returns></returns>
+    // private Movenment.TrackingData AvoidCollisions(Movenment.TrackingData trackingData, float timeToPredict)
+    // {
+    //     var movenments = FindObjectsOfType<Movenment>();
+
+    //     // We have to collect all of the dangerous points.
+
+    //     List<Vector2> dangerousPoints = new List<Vector2>(movenments.Length * 2);
+
+    //     foreach (var movenment in movenments)
+    //     {
+    //         Vector2 predictedPosition = movenment.Rigidbody2D.position + movenment.Rigidbody2D.velocity * timeToPredict;
+    //         dangerousPoints.Add(predictedPosition);
+
+    //         var resqueable = movenment.GetComponent<RescueableCar>();
+    //         if (resqueable)
+    //         {
+    //             if (resqueable.IsResquing)
+    //             {
+    //                 dangerousPoints.Add(resqueable.m_dataToRescueWith.RoadCenter);
+    //             }
+    //         }
+    //     }
+
+    //     // Run through it to avoid overlapping.
+    //     bool isResolved = false;
+    //     int repetitions = 0;
+    //     const int maxRepetitions = 50;
+
+    //     float safeRadiusSquared = SafeRadius * SafeRadius;
+
+    //     do
+    //     {
+    //         isResolved = true;
+    //         foreach (var point in dangerousPoints)
+    //         {
+    //             Vector2 diff = point - trackingData.RoadCenter;
+    //             if (diff.sqrMagnitude < safeRadiusSquared)
+    //             {
+    //                 if (Vector2.Dot(trackingData.RoadDirection, diff) < 0f)
+    //                     StepForward(-1);
+    //                 isResolved = false;
+    //             }
+    //         }
+
+    //         ++repetitions;
+    //     }
+    //     while (!isResolved && repetitions < maxRepetitions);
+
+
+    //     return trackingData;
+
+    //     void StepForward(float sign)
+    //     {
+    //         trackingData.RoadCenter += trackingData.RoadDirection * (sign * OverlappingResolvingStep);
+    //         trackingData = m_movenment.FetchTrackingDataForGlobalPoint(trackingData.RoadCenter);
+    //     }
+    // }
 
     private IEnumerator CumRescueProgram()
     {
         if (m_tracker)
             m_tracker.enabled = false;
+        IsDataToRescueWithLocked = false;
         m_movenment.FreeFly++;
 
         yield return new WaitForSeconds(RescuePause);
 
-        Vector2 roadDirection = m_dataToRescureWith.RoadDirection;
+        // Clone tracking data to persist it.
+        // Tracking data may be changed to avoid enemies overlapping.
+        var fixedDataToRescueWith = m_dataToRescueWith;
+        IsDataToRescueWithLocked = true;
+
+        Vector2 roadDirection = fixedDataToRescueWith.RoadDirection;
         if (ReveseAngle)
             roadDirection = -roadDirection;
 
@@ -79,7 +166,7 @@ public class RescueableCar : MonoBehaviour
             Vector2 oldPos = m_cum.transform.position;
             float oldRot = m_cum.transform.eulerAngles.z;
 
-            Vector2 targetPos = m_dataToRescureWith.RoadCenter + roadDirection * m_cumPos.y;
+            Vector2 targetPos = fixedDataToRescueWith.RoadCenter + roadDirection * m_cumPos.y;
 
             while (time < CameraMoveTime)
             {
@@ -103,7 +190,7 @@ public class RescueableCar : MonoBehaviour
             yield return new WaitForSeconds(CameraMoveTime);
 
         var body = m_movenment.Rigidbody2D;
-        body.position = m_dataToRescureWith.RoadCenter;
+        body.position = fixedDataToRescueWith.RoadCenter;
         body.rotation = targetRot;
 
         GetComponent<ShockableCar>().AbortShocking();
@@ -140,7 +227,8 @@ public class RescueableCar : MonoBehaviour
 
             if (itWasAtTheGround)
             {
-                m_dataToRescureWith = tracking;
+                m_dataToRescueWith = tracking;
+
                 body.velocity *= GoToWaterStartCof;
                 StartCoroutine(CumRescueProgram());
 

@@ -60,9 +60,9 @@ public class Movenment : MonoBehaviour
         m_tracking.Value :
         (m_tracking = FetchTrackingData()).Value;
 
-    public TrackingData FetchTrackingData(Vector2 offset = default)
+    public TrackingData FetchTrackingDataForGlobalPoint(Vector2 carGlobalPoint)
     {
-        Vector2 position = Rigidbody2D.position + offset;
+        Vector2 position = carGlobalPoint;
         (var pos, var dir, var rad) = PathData.GetNearestPoint(position);
         return new TrackingData()
         {
@@ -76,6 +76,12 @@ public class Movenment : MonoBehaviour
             EdgeIsSolid = PathData.EdgesAreSolid,
             DeepWaterDistance = rad + PathData.DistanceToWater + PathData.DistanceToDeepWater
         };
+    }
+
+    public TrackingData FetchTrackingData(Vector2 offset = default)
+    {
+        Vector2 position = Rigidbody2D.position + offset;
+        return FetchTrackingDataForGlobalPoint(position);
     }
 
     private void Awake()
