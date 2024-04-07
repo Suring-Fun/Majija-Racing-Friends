@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1024
@@ -202,9 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GolfiCar_CUTE_2: 1402699431
-      GolfiCar_CUTE_1: 773707392
       GolfiCar_CUTE_0: 2099892171
+      GolfiCar_CUTE_1: 773707392
+      GolfiCar_CUTE_2: 1402699431
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
