@@ -146,13 +146,17 @@ public class Movenment : MonoBehaviour
         Rigidbody2D.velocity = (Vector2)(transform.up * m_speed * scale);
     }
 
-    public Action MultSpeed(float moveMultFactor, float rotateMultFactor)
+    public float EnginePower { get; private set; } = 1f;
+
+    public Action MultSpeed(float moveMultFactor, float rotateMultFactor, float enginePowerMultFactor)
     {
         float moveSpeed = MaxSpeed;
         float angularSpeed = MaxAngularSpeed;
+        float enginePower = EnginePower;
 
         MaxSpeed *= moveMultFactor;
         MaxAngularSpeed *= rotateMultFactor;
+        EnginePower *= enginePowerMultFactor;
 
         m_speed *= moveMultFactor;
         m_angularSpeed *= rotateMultFactor;
@@ -161,6 +165,7 @@ public class Movenment : MonoBehaviour
         {
             MaxSpeed = moveSpeed;
             MaxAngularSpeed = angularSpeed;
+            EnginePower = enginePower;
 
             m_speed /= moveMultFactor;
             m_angularSpeed /= rotateMultFactor;

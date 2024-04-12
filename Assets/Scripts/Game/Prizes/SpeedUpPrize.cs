@@ -16,6 +16,8 @@ public class SpeedUpPrize : IPrize
     public float MoveMultFactor { get; }
     public float RotateMultFactor { get; }
 
+    public float EnginePowerMultFactor { get; }
+
     public IPrize.PrizeApplyMode ApplyMode => IPrize.PrizeApplyMode.JustApply;
 
     private Action m_undoAction;
@@ -27,14 +29,25 @@ public class SpeedUpPrize : IPrize
     private Transform m_car;
     private ShockableCar m_shockable;
 
-    public SpeedUpPrize(Transform car, Sprite icon, float amountDecrease01PerSecond, float moveMultFactor, float rotateMultFactor)
+    private GameObject m_audioPrefab;
+
+    private float m_audioLivetime;
+
+    public SpeedUpPrize(Transform car, Sprite icon, float amountDecrease01PerSecond, float moveMultFactor, float rotateMultFactor, float enginePowerMultFactor, GameObject audioPrefab, float audioPrefabLiveTime)
     {
         m_car = car;
         Icon = icon;
-        AmountDecreaseSpeed = amountDecrease01PerSecond;
+        
         MoveMultFactor = moveMultFactor;
         RotateMultFactor = rotateMultFactor;
+        EnginePowerMultFactor = enginePowerMultFactor;
+
+        AmountDecreaseSpeed = amountDecrease01PerSecond;
+        
         m_shockable = car.GetComponent<ShockableCar>();
+
+        m_audioPrefab = audioPrefab;
+        m_audioLivetime = audioPrefabLiveTime;
     }
 
     public void Apply(Vector2 direction)
@@ -49,7 +62,7 @@ public class SpeedUpPrize : IPrize
         var movenment = m_car.GetComponent<Movenment>();
         var shockable = m_car.GetComponent<ShockableCar>();
 
-        var multSpeedUndoAction = movenment.MultSpeed(MoveMultFactor, RotateMultFactor);
+        var multSpeedUndoAction = movenment.MultSpeed(MoveMultFactor, RotateMultFactor, EnginePowerMultFactor);
         shockable.IgnoreCollisionShocks++;
 
         m_undoAction = () =>
@@ -60,6 +73,9 @@ public class SpeedUpPrize : IPrize
 
         m_isRunning = true;
         PrizeChanged?.Invoke(this);
+
+        GameObject.Destroy(GameObject.Instantiate(m_audioPrefab, m_car, false), m_audioLivetime);
+
     }
 
     public IPrize.UpdateResult Update(float delata)

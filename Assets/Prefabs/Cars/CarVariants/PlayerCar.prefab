@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4443285198399283320}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1808483333
 Camera:
@@ -59,7 +59,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 57.450054
+  field of view: 34.601955
   orthographic: 1
   orthographic size: 40
   m_Depth: -1
@@ -130,7 +130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4443285198399283320}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7719691485013390386
 MonoBehaviour:
@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8490566
       objectReference: {fileID: 0}
+    - target: {fileID: 1394450849184678718, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704799241233362351, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 620b148982a503141b61e3573424a782, type: 3}
     - target: {fileID: 6086388750508870204, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
       propertyPath: m_Name
       value: BackWheels

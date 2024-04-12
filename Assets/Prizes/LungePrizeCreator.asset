@@ -26,3 +26,5 @@ MonoBehaviour:
   <Radius>k__BackingField: 7.5
   <Duration>k__BackingField: 0.2
   <Count>k__BackingField: 3
+  <AudioInstance>k__BackingField: {fileID: 5563425374237549568, guid: 08c4aa42e2245619a881200ff51c9ab5, type: 3}
+  <AudioLifeTime>k__BackingField: 1

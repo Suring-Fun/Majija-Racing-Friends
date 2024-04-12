@@ -27,6 +27,12 @@ public class ShockableCar : MonoBehaviour
     [field: SerializeField]
     public int ShockLimit { get; private set; } = 2;
 
+    [field: SerializeField]
+    public AudioSource ShockAudio { get; private set; }
+
+    [field: SerializeField]
+    public float ShockPitchRange { get; private set; } = 0.1f;
+
     private int m_shocks = 0;
 
     public int IgnoreCollisionShocks
@@ -133,6 +139,11 @@ public class ShockableCar : MonoBehaviour
 
         if (m_shocks >= ShockLimit)
             GetComponent<RescueableCar>().RunRescueProgram(m_movenmnt.FetchTrackingData());
+
+        if (ShockAudio) {
+            ShockAudio.pitch = Random.Range(1f - ShockPitchRange, 1f + ShockPitchRange);
+            ShockAudio.Play();
+        }
     }
 
     public void AbortShocking()

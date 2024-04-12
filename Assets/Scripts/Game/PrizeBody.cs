@@ -56,6 +56,8 @@ public class PrizeBody : MonoBehaviour
     [field: SerializeField]
     PrizeCreator[] Prizes = new PrizeCreator[0];
 
+    [field: SerializeField]
+    public AudioSource CollectedAudio { get; private set; }
     public float TimeToRecover = 10f;
 
     public GameObject Graphics;
@@ -65,6 +67,7 @@ public class PrizeBody : MonoBehaviour
     private IEnumerator DoUse()
     {
         m_used = true;
+        CollectedAudio.Play();
         Graphics.SetActive(false);
 
         yield return new WaitForSeconds(TimeToRecover);

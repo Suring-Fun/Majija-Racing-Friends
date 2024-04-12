@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
     public float Lifetime { get; private set; } = 30f;
     public float Speed { get; private set; }
 
+    [field: SerializeField]
+    public AudioSource ReflectionAudioSource { get; private set; }
+
     private Rigidbody2D m_rigidbody;
     private PathData m_path;
     private Vector2 m_totalVelocity;
@@ -59,6 +62,8 @@ public class Bullet : MonoBehaviour
                 if (Vector2.Dot(m_totalVelocity, x) < 0f)
                 {
                     m_rigidbody.velocity = m_totalVelocity = Vector2.Reflect(m_totalVelocity, x);
+                    if (ReflectionAudioSource)
+                        ReflectionAudioSource.Play();
                 }
             }
         }

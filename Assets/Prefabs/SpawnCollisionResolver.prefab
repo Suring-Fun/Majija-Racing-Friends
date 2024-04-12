@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SafeRadius: 35
   Step: 1
-  MaxRepeats: 300
+  MaxRepeats: 50

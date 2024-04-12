@@ -16,14 +16,26 @@ public class SpeedUpPrizeCreator : PrizeCreator
     [field: SerializeField]
     public float RotateMultFactor { get; private set; } = 1.25f;
 
+    [field: SerializeField]
+    public float EnginePowerMultFactor { get; private set; } = 1.15f;
+
+    [field: SerializeField]
+    public GameObject AudioPrefab { get; private set; }
+
+    [field: SerializeField]
+    public float AudioPrefabLiveTime { get; private set; }
+
     public override IPrize NewPrize(Transform car)
     {
         return new SpeedUpPrize(
             car,
             Icon,
-             1f / Duration,
+            1f / Duration,
             MoveMultFactor,
-            RotateMultFactor
+            RotateMultFactor,
+            EnginePowerMultFactor,
+            AudioPrefab,
+            AudioPrefabLiveTime
         );
     }
 }

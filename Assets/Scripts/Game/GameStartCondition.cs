@@ -20,6 +20,10 @@ public class GameStartCondition : MonoBehaviour
 
     public event LabelChangedHandler LabelChanged;
 
+    public event System.Action GameStarted;
+
+    public event System.Action CountDownStarted;
+
     private void Start()
     {
         IEnumerator Coroutine()
@@ -33,6 +37,8 @@ public class GameStartCondition : MonoBehaviour
 
             yield return new WaitForSeconds(SuspendTime);
 
+            CountDownStarted?.Invoke();
+
             while (SecondsToWait > 0)
             {
                 LabelChanged?.Invoke(SecondsToWait.ToString(), false);
@@ -43,6 +49,7 @@ public class GameStartCondition : MonoBehaviour
             foreach (var car in cars)
                 car.FreeFly--;
 
+            GameStarted?.Invoke();
             LabelChanged?.Invoke(GoString, false);
 
             yield return new WaitForSeconds(LabelSuspendTime);

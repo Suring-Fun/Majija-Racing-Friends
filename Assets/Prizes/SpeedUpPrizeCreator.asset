@@ -23,3 +23,6 @@ MonoBehaviour:
   <Duration>k__BackingField: 5
   <MoveMultFactor>k__BackingField: 1.35
   <RotateMultFactor>k__BackingField: 1
+  <EnginePowerMultFactor>k__BackingField: 1.25
+  <AudioPrefab>k__BackingField: {fileID: 567885823415682676, guid: 1eaa8ab6aad4cfbce92cb3597b10e572, type: 3}
+  <AudioPrefabLiveTime>k__BackingField: 12

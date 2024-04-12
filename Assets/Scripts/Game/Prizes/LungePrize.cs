@@ -32,10 +32,14 @@ public class LungePrize : IPrize
     private Movenment m_moveable;
     private ShockableCar m_shockable;
 
+    private GameObject m_audioInstance;
+
+    private float m_audioLifeTime;
+
     // private float m_angleFrom;
     // private float m_angleTo;
 
-    public LungePrize(Transform car, Sprite[] icons, float radius, float duration, int count)
+    public LungePrize(Transform car, Sprite[] icons, float radius, float duration, int count, GameObject audioInstance, float audioLifeTime)
     {
         m_car = car;
         m_moveable = car.GetComponent<Movenment>();
@@ -46,6 +50,9 @@ public class LungePrize : IPrize
         m_flySpeed = radius / duration;
 
         Count = count;
+
+        m_audioInstance = audioInstance;
+        m_audioLifeTime = audioLifeTime;
     }
 
     public void Apply(Vector2 direction)
@@ -74,6 +81,8 @@ public class LungePrize : IPrize
         // m_angleTo = Mathf.Atan2(-m_globalDirection.x, m_globalDirection.y) * Mathf.Rad2Deg;
         // m_angleTo = Mathf.LerpAngle(m_angleFrom, m_angleTo, Vector2.Dot(m_car.up, m_globalDirection));
         PrizeChanged?.Invoke(this);
+
+        GameObject.Destroy(GameObject.Instantiate(m_audioInstance, m_car, false), m_audioLifeTime);
     }
 
     public float PreviewDistance(Vector2 direction)

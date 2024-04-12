@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1844857349073029217}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2787172528642299469
 MonoBehaviour:
@@ -184,6 +184,30 @@ PrefabInstance:
     - target: {fileID: 1142428135146028226, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
       propertyPath: m_Color.r
       value: 0.6415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394450849184678718, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704799241233362351, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 686e375fdb37d00dbb4f4f784c345c66, type: 3}
+    - target: {fileID: 5540910143788164700, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387845240794479587, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: MaxRotating
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387845240794479587, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: MaxStayPitch
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387845240794479587, guid: 645201fcc4d749470a1864ce24a23091, type: 3}
+      propertyPath: MaxRunningPitch
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645201fcc4d749470a1864ce24a23091, type: 3}

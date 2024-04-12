@@ -15,13 +15,21 @@ public class LungePrizeCreator : PrizeCreator
     [field: SerializeField]
     public int Count { get; private set; } = 3;
 
+    [field: SerializeField]
+    public GameObject AudioInstance { get; private set; }
+
+    [field: SerializeField]
+    public float AudioLifeTime { get; private set; } = 1f;
+
     public override IPrize NewPrize(Transform car)
     {
         return new LungePrize(car,
         m_icons,
         Radius,
         Duration,
-        Count
+        Count,
+        AudioInstance,
+        AudioLifeTime
         );
     }
 }

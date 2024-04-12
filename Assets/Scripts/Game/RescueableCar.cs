@@ -29,6 +29,9 @@ public class RescueableCar : MonoBehaviour
     public float SafeRadius = 5f;
     public float OverlappingResolvingStep = 10f;
 
+    [field: SerializeField]
+    public AudioSource SwimmingAudioSource { get; private set; }
+
     private bool m_isSwimming;
     private bool m_rescuing;
 
@@ -227,6 +230,9 @@ public class RescueableCar : MonoBehaviour
 
             if (itWasAtTheGround)
             {
+                if (SwimmingAudioSource)
+                    SwimmingAudioSource.Play();
+                
                 m_dataToRescueWith = tracking;
 
                 body.velocity *= GoToWaterStartCof;
