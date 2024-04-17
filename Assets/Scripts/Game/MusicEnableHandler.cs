@@ -9,6 +9,8 @@ public class MusicEnableHandler : MonoBehaviour
 
     public float Duration = 0.5f;
 
+    public string SettingName = "EnableMusic";
+
     void Awake()
     {
         m_source = GetComponent<AudioSource>();
@@ -26,7 +28,7 @@ public class MusicEnableHandler : MonoBehaviour
         IEnumerator C()
         {
             yield return new WaitForSeconds(Duration);
-            m_source.enabled = true;
+            m_source.enabled = PlayerSettings.Instance[SettingName];
         }
     }
 

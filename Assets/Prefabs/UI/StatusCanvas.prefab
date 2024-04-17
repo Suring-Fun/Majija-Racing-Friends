@@ -1499,6 +1499,7 @@ GameObject:
   - component: {fileID: 9167978621230493106}
   - component: {fileID: 1636504148296587048}
   - component: {fileID: 846456797331207560}
+  - component: {fileID: 5311122472845617274}
   m_Layer: 5
   m_Name: StageStart
   m_TagString: Untagged
@@ -1634,6 +1635,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69f43566a12e97e3a4681c8914261d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5311122472845617274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771421217955830940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableMusic
 --- !u!1 &8316064068076386276
 GameObject:
   m_ObjectHideFlags: 0

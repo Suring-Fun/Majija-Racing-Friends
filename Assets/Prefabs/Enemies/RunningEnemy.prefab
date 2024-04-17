@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6569380742459516540}
   - component: {fileID: 7525457699454442811}
+  - component: {fileID: 893796304881565588}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -128,6 +129,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &893796304881565588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241202674311019788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &891383468352303317
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4037139042303425518}
   - component: {fileID: 970199952785692749}
+  - component: {fileID: 5310211500144316527}
   m_Layer: 0
   m_Name: Shocking
   m_TagString: Untagged
@@ -714,6 +729,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5310211500144316527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497926889942320047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &6524768157310547323
 GameObject:
   m_ObjectHideFlags: 0

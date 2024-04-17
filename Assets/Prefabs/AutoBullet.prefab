@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9025144102654663123}
   - component: {fileID: 7151573152814522442}
+  - component: {fileID: 1506547507182707577}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -161,6 +162,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1506547507182707577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426959997920681745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &6762596801417323918
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,6 +5110,7 @@ GameObject:
   - component: {fileID: 3609716495147570226}
   - component: {fileID: 893425874998734932}
   - component: {fileID: 3155716435620368839}
+  - component: {fileID: 89612198239118170}
   m_Layer: 0
   m_Name: Explode
   m_TagString: Untagged
@@ -5227,6 +5242,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Delay>k__BackingField: 8
+--- !u!114 &89612198239118170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639587723433393981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &7928088672115158232
 GameObject:
   m_ObjectHideFlags: 0

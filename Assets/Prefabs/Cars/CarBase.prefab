@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 7992988609222875696}
   - component: {fileID: 5540910143788164700}
   - component: {fileID: 7387845240794479587}
+  - component: {fileID: 2948972652335766427}
   m_Layer: 0
   m_Name: Running
   m_TagString: Untagged
@@ -646,6 +647,19 @@ MonoBehaviour:
   MaxStayPitch: 0.3
   MaxRunningPitch: 0.6
   MaxRotating: 0.65
+--- !u!114 &2948972652335766427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507860969748661226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &5556183039688129634
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4455376242843301680}
   - component: {fileID: 3704799241233362351}
+  - component: {fileID: 1316593960641394359}
   m_Layer: 0
   m_Name: Shocking
   m_TagString: Untagged
@@ -774,6 +789,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1316593960641394359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556183039688129634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &6810088595672735485
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2794364497976152617}
   - component: {fileID: 7404390300040274796}
+  - component: {fileID: 891289444200100991}
   m_Layer: 0
   m_Name: UnderWater
   m_TagString: Untagged
@@ -902,6 +931,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &891289444200100991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810088595672735485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &7449546909620172959
 GameObject:
   m_ObjectHideFlags: 0

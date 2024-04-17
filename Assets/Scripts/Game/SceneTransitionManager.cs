@@ -45,6 +45,8 @@ public class SceneTransitionManager : MonoBehaviour
         if (m_lastLoadedScene is not null)
             yield return SceneManager.UnloadSceneAsync(m_lastLoadedScene);
 
+        Resources.UnloadUnusedAssets();
+
         yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         m_lastLoadedScene = scene;
 

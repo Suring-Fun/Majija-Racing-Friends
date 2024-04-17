@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stages/03_GolfyForest.unity
     guid: dbb4b94352abd7236bb67b8db356e5f5
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/IntroComics.unity
+    guid: 1157943b53a6bbcb59918b70f2971c45
   m_configObjects: {}

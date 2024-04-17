@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1553394254588785312}
   - component: {fileID: 3495438473659660036}
   - component: {fileID: 9191211810694461998}
+  - component: {fileID: 5202844890294332010}
   m_Layer: 0
   m_Name: Puddling
   m_TagString: Untagged
@@ -142,6 +143,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Delay>k__BackingField: 2
+--- !u!114 &5202844890294332010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512815366995783690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed5846991291a2fa9f85a85c8de8598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SettingName>k__BackingField: EnableSound
 --- !u!1 &3675619518010787291
 GameObject:
   m_ObjectHideFlags: 0
