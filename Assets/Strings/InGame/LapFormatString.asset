@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: LapFormatString
   m_EditorClassIdentifier: 
   <DefaultValue>k__BackingField: "\u041A\u0440\u0443\u0433 {0} \u0438\u0437 {1}"
+  <EnglishValue>k__BackingField: Lap {0}/{1}

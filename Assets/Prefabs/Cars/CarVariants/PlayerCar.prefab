@@ -59,9 +59,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.601955
+  field of view: 60.931805
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 32
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fieldOfView: 60
-  m_orthographicSize: 30
-  m_minOrthographicSize: 40
+  m_orthographicSize: 24
+  m_minOrthographicSize: 32
 --- !u!1 &4394385692507507036
 GameObject:
   m_ObjectHideFlags: 0

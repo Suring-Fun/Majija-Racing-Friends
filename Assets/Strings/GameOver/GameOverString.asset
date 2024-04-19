@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameOverString
   m_EditorClassIdentifier: 
   <DefaultValue>k__BackingField: "\u041A\u041E\u041D\u0415\u0426 \u0418\u0413\u0420\u042B"
+  <EnglishValue>k__BackingField: GAME OVER

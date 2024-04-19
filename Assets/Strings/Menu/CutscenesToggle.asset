@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: CutscenesToggle
   m_EditorClassIdentifier: 
   <DefaultValue>k__BackingField: "\u0410\u0443\u0434\u0438\u043E \u043A\u0430\u0442\u0441\u0446\u0435\u043D"
+  <EnglishValue>k__BackingField: Cutscene audio

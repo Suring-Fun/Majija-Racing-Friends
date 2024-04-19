@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlaceFormatString
   m_EditorClassIdentifier: 
   <DefaultValue>k__BackingField: "{0}-\u0439"
+  <EnglishValue>k__BackingField: '{0}-th'

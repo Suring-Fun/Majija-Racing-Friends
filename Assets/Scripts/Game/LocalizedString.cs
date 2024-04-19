@@ -3,12 +3,17 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "LocalizedString", fileName = "LocalizedString")]
 public class LocalizedString : ScriptableObject
 {
-    [field: SerializeField] 
+    [field: SerializeField]
     [field: TextArea]
     public string DefaultValue { get; private set; } = string.Empty;
+
+    [field: SerializeField]
+    [field: TextArea]
+    public string EnglishValue { get; private set; } = string.Empty;
+
     public override string ToString()
     {
-        return DefaultValue;
+        return System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "ru" ? DefaultValue : EnglishValue;
     }
 
 
