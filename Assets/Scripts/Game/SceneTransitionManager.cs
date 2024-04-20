@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -16,13 +17,13 @@ public class SceneTransitionManager : MonoBehaviour
 
     [field: SerializeField]
     public string CurtainsEntrence = "Enterence";
-    
+
     [field: SerializeField]
     public string CurtainsExit = "Exit";
 
     [field: SerializeField]
     public float TransitionTime = 0.5f;
-    
+
 
     private bool m_isLoading = false;
     private string m_lastLoadedScene = null;
@@ -47,6 +48,24 @@ public class SceneTransitionManager : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
 
+
+        bool adIsShowing = false;
+
+        System.Action adShowingHandler = () => adIsShowing = true;
+        YandexGame.onAdNotification += adShowingHandler;
+
+        System.Action adClosedHandler = null;  
+        adClosedHandler = () => adIsShowing = false;    
+        YandexGame.CloseFullAdEvent += adClosedHandler;
+
+        YandexGame.FullscreenShow();
+
+        while (adIsShowing)
+            yield return null;
+
+        YandexGame.CloseFullAdEvent -= adClosedHandler;
+        YandexGame.onAdNotification -= adShowingHandler;
+
         yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         m_lastLoadedScene = scene;
 
@@ -54,7 +73,7 @@ public class SceneTransitionManager : MonoBehaviour
 
         yield return null;
         yield return null;
-        
+
         LoadingScreen.SetActive(false);
 
         Curtains.gameObject.SetActive(true);

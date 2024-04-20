@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 [CreateAssetMenu(menuName = "LocalizedString", fileName = "LocalizedString")]
 public class LocalizedString : ScriptableObject
@@ -13,7 +14,7 @@ public class LocalizedString : ScriptableObject
 
     public override string ToString()
     {
-        return System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "ru" ? DefaultValue : EnglishValue;
+        return YandexGame.EnvironmentData.language == "ru" ? DefaultValue : EnglishValue;
     }
 
 

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using YG;
 
 public class PlayerProgress : MonoBehaviour
 {
@@ -25,8 +26,13 @@ public class PlayerProgress : MonoBehaviour
         Main = this;
     }
 
-    internal void SaveChanges()
+    public void LoadChanges() {
+        PlayerLevel = YandexGame.savesData.currentPlayerLevel;
+    }
+
+    public void SaveChanges()
     {
-        Debug.Log("Progress must be saved here");
+        YandexGame.savesData.currentPlayerLevel = PlayerLevel;
+        YandexGame.SaveProgress();
     }
 }

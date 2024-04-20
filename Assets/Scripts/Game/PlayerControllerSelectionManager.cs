@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class PlayerControllerSelectionManager : MonoBehaviour
 {
@@ -21,12 +22,11 @@ public class PlayerControllerSelectionManager : MonoBehaviour
     public void Awake() {
         GameObject prefab = StandaloneVer;
         #if UNITY_EDITOR
-        Debug.LogWarning("Select control based on platform using appropriate");
         prefab = UseMobileInEditor ? MobileVer : StandaloneVer;
         #elif UNITY_ANDROID
         prefab = MobileVer;
         #else
-        prefab = Application.isMobilePlatform ? MobileVer : StandaloneVer;
+        prefab = YandexGame.EnvironmentData.isMobile ? MobileVer : StandaloneVer;
         #endif
 
         m_current = Instantiate(prefab, transform, false);
