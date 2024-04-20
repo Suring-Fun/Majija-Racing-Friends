@@ -8,7 +8,7 @@ public class StickFetch : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     public Vector2 Mult { get; set; }
 
-    public Rect Clamp {get; set; } = new Rect(-1f, -1f, 2f, 2f);
+    public Rect Clamp { get; set; } = new Rect(-1f, -1f, 2f, 2f);
 
     public float Radius { get; set; } = 50f;
 
@@ -28,8 +28,10 @@ public class StickFetch : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         if (IsInUse)
         {
-            if(Input.GetMouseButton(0))
+#if UNITY_EDITOR
+            if (Input.GetMouseButton(0))
                 UpdateStickInfo(-1, Input.mousePosition);
+#endif
 
             for (int x = 0; x < Input.touchCount; ++x)
             {
