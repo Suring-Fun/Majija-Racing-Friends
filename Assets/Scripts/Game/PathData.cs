@@ -28,7 +28,6 @@ public class PathData : MonoBehaviour
     {
         Points = RoadSystem.GetPointsToleranced(Step).ToArray();
         TotalLength = GetTotalLength();
-        Debug.Log(Points.Length);
     }
 
     public (float nearestDistance, float projection) DistacneBetweenLineAndPoint(Vector2 line1, Vector2 line2, Vector2 point)

@@ -14,9 +14,6 @@ public class OfferToReview : MonoBehaviour
 
     private void Rewiew()
     {
-        if (YandexGame.EnvironmentData.reviewCanShow)
-        {
-            YandexGame.ReviewShow(false);
-        }
+        YandexGame.ReviewShow(false);
     }
 }

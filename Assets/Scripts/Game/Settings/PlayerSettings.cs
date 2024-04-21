@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class PlayerSettings : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerSettings : MonoBehaviour
     private HashSet<string> m_settingsDisabled = new();
 
     public event Action<string, bool> SettingChanged;
+
+    public bool IsDirty { get; private set; } = false;
 
     public bool this[string key]
     {
@@ -32,6 +35,8 @@ public class PlayerSettings : MonoBehaviour
                 if (m_settingsDisabled.Add(key))
                     SettingChanged?.Invoke(key, false);
             }
+
+            IsDirty = true;
         }
     }
 
@@ -46,10 +51,37 @@ public class PlayerSettings : MonoBehaviour
         get => this["EnableSound"];
         set => this["EnableSound"] = value;
     }
+
+    [Obsolete("Cutscenes is canceled.")]
     public bool EnableCutsceneFX
     {
         get => this["EnableCutsceneFX"];
         set => this["EnableCutsceneFX"] = value;
+    }
+
+    public bool EnableHelp
+    {
+        get => this["EnableHelp"];
+        set => this["EnableHelp"] = value;
+    }
+
+    public void LoadChanges()
+    {
+        var saves = YandexGame.savesData;
+        EnableMusic = saves.EnableMusic;
+        EnableSound = saves.EnableSound;
+        EnableHelp = saves.EnableHelp;
+        IsDirty = false;
+    }
+
+    public void SaveChanges()
+    {
+        var saves = YandexGame.savesData;
+        saves.EnableMusic = EnableMusic;
+        saves.EnableSound = EnableSound;
+        saves.EnableHelp = EnableHelp;
+        YandexGame.SaveProgress();
+        IsDirty = false;
     }
 
 

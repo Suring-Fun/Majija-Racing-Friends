@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 5205917324735712024}
   - component: {fileID: 5205917324735712027}
   - component: {fileID: 5205917324735712026}
+  - component: {fileID: 4472485508901360877}
   m_Layer: 5
   m_Name: GameLooseCanvas
   m_TagString: Untagged
@@ -155,6 +156,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10
@@ -199,6 +201,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4472485508901360877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205917324735712021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f8866d358cdf056b3138e84e9d8200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5205917324833365044
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +367,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class StickFetch : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+public class StickFetch : MonoBehaviour, IPointerDownHandler
 {
     public bool IsInUse { get; private set; }
     public Vector2 Position { get; private set; }
@@ -28,32 +28,25 @@ public class StickFetch : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         if (IsInUse)
         {
-#if UNITY_EDITOR
-            if (Input.GetMouseButton(0))
-                UpdateStickInfo(-1, Input.mousePosition);
-#endif
-
+            bool touchesFound = false;
             for (int x = 0; x < Input.touchCount; ++x)
             {
                 var touch = Input.GetTouch(x);
-                UpdateStickInfo(touch.fingerId, touch.position);
+                touchesFound |= UpdateStickInfo(touch.fingerId, touch.position);
+            }
+
+            if (!touchesFound)
+            {
+                IsInUse = false;
+                Position = default;
             }
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (eventData.pointerId == pointerId)
-        {
-            IsInUse = false;
-            Position = default;
-        }
-    }
-
-    void UpdateStickInfo(int pId, Vector2 position)
+    bool UpdateStickInfo(int pId, Vector2 position)
     {
         if (pId != pointerId)
-            return;
+            return false;
 
         bool success = RectTransformUtility.ScreenPointToLocalPointInRectangle(
             (RectTransform)transform,
@@ -63,7 +56,7 @@ public class StickFetch : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         );
 
         if (!success)
-            return;
+            return false;
 
         Vector2 vector2 = value * Mult;
         var pos = vector2.normalized * Mathf.Min(vector2.magnitude, Radius) / Radius;
@@ -71,5 +64,6 @@ public class StickFetch : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         pos.y = Mathf.Clamp(pos.y, Clamp.yMin, Clamp.yMax);
 
         Position = pos;
+        return true;
     }
 }

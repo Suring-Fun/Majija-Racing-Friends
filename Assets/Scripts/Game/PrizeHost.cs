@@ -90,6 +90,10 @@ public class PrizeHost : MonoBehaviour
     [field: SerializeField]
     public Gradient InfinityGradient { get; private set; }
 
+    public bool PreviewIsInfinity { get; private set; } = false;
+
+    public bool PreviewEnabled { get; private set; } = false;
+
     private void Awake()
     {
         LineRenderer.positionCount = m_poses.Length;
@@ -97,6 +101,8 @@ public class PrizeHost : MonoBehaviour
 
     public void EnableApplyPreview(Vector2 direction)
     {
+        PreviewEnabled = true;
+        PreviewIsInfinity = false;
         Vector2 directionNormalized = direction.normalized;
 
         LineRenderer.enabled = true;
@@ -108,6 +114,7 @@ public class PrizeHost : MonoBehaviour
             length = InfinityPrewiewDistance;
             LineRenderer.colorGradient = InfinityGradient;
             WhereAmIMark.gameObject.SetActive(false);
+            PreviewIsInfinity = true;
         }
         else
         {
@@ -128,5 +135,7 @@ public class PrizeHost : MonoBehaviour
     {
         LineRenderer.enabled = false;
         WhereAmIMark.gameObject.SetActive(false);
+        PreviewIsInfinity = false;
+        PreviewEnabled = false;
     }
 }

@@ -9,12 +9,12 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
-
-        // Тестовые сохранения для демо сцены
         
         // Ваши сохранения
 
         public int currentPlayerLevel = -1;
+
+        public bool EnableMusic = true, EnableSound = true, EnableHelp = true;
 
         // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()

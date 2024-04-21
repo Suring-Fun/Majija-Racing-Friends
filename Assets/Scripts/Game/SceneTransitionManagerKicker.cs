@@ -13,6 +13,7 @@ public class SceneTransitionManagerKicker : MonoBehaviour
             yield return null;
 
         PlayerProgress.Main.LoadChanges();
+        PlayerSettings.Instance.LoadChanges();
 
         SceneTransitionManager.Main.LaunchSceneTransition(SceneToKickFor);
     }
