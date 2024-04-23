@@ -9,8 +9,6 @@ public class PlayerControllerSelectionManager : MonoBehaviour
     public GameObject StandaloneVer;
     public GameObject MobileVer;
 
-    public bool UseMobileInEditor;
-
     private GameObject m_current;
 
     [ContextMenu("Make AI controllable")]
@@ -21,12 +19,10 @@ public class PlayerControllerSelectionManager : MonoBehaviour
 
     public void Awake() {
         GameObject prefab = StandaloneVer;
-        #if UNITY_EDITOR
-        prefab = UseMobileInEditor ? MobileVer : StandaloneVer;
-        #elif UNITY_ANDROID
+        #if UNITY_ANDROID
         prefab = MobileVer;
         #else
-        prefab = YandexGame.EnvironmentData.isMobile ? MobileVer : StandaloneVer;
+        prefab = PlatofrmUtility.CheckIfIsAnTablet() ? MobileVer : StandaloneVer;
         #endif
 
         m_current = Instantiate(prefab, transform, false);
