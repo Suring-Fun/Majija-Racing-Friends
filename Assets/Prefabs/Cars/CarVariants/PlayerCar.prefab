@@ -59,7 +59,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.931805
+  field of view: 35.9834
   orthographic: 1
   orthographic size: 32
   m_Depth: -1
@@ -147,7 +147,6 @@ MonoBehaviour:
   AIVer: {fileID: 1249881698909956870, guid: 7476a3b028e7a9b5c823a13e37619576, type: 3}
   StandaloneVer: {fileID: 5621269063783177205, guid: 88d30203a3b64439b94bca96633f2521, type: 3}
   MobileVer: {fileID: 1138672288045836794, guid: 90df661211dac9f498c364662f5244c5, type: 3}
-  UseMobileInEditor: 0
 --- !u!1001 &3600466077883264412
 PrefabInstance:
   m_ObjectHideFlags: 0
