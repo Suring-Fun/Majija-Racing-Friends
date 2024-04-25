@@ -1,2 +1,2 @@
-Build path: /media/Files/Projects/Mine/Unity/CarsProto_Movenment/Build/WebGL/YGame
-Build number: 10
+Build path: /media/Files/Projects/Mine/Unity/CarsProto_Movenment/Build/WebGL/IntermediateGame
+Build number: 25

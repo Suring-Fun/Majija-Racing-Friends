@@ -25,6 +25,9 @@ public class SceneTransitionManager : MonoBehaviour
     public float TransitionTime = 0.5f;
 
 
+    [field: SerializeField]
+    public bool UsePlatformAPI { get; private set; } = true;
+
     private bool m_isLoading = false;
     private string m_lastLoadedScene = null;
 
@@ -48,23 +51,25 @@ public class SceneTransitionManager : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
 
+        if (UsePlatformAPI)
+        {
+            bool adIsShowing = false;
 
-        bool adIsShowing = false;
+            System.Action adShowingHandler = () => adIsShowing = true;
+            YandexGame.onAdNotification += adShowingHandler;
 
-        System.Action adShowingHandler = () => adIsShowing = true;
-        YandexGame.onAdNotification += adShowingHandler;
+            System.Action adClosedHandler = null;
+            adClosedHandler = () => adIsShowing = false;
+            YandexGame.CloseFullAdEvent += adClosedHandler;
 
-        System.Action adClosedHandler = null;  
-        adClosedHandler = () => adIsShowing = false;    
-        YandexGame.CloseFullAdEvent += adClosedHandler;
+            YandexGame.FullscreenShow();
 
-        YandexGame.FullscreenShow();
+            while (adIsShowing)
+                yield return null;
 
-        while (adIsShowing)
-            yield return null;
-
-        YandexGame.CloseFullAdEvent -= adClosedHandler;
-        YandexGame.onAdNotification -= adShowingHandler;
+            YandexGame.CloseFullAdEvent -= adClosedHandler;
+            YandexGame.onAdNotification -= adShowingHandler;
+        }
 
         yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         m_lastLoadedScene = scene;

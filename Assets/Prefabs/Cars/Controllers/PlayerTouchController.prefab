@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 1138672287688642432}
   - component: {fileID: 1138672287688642436}
   - component: {fileID: 197809943768886508}
+  - component: {fileID: 7391809054687317887}
   m_Layer: 5
   m_Name: ControlsCanvas
   m_TagString: Untagged
@@ -420,6 +421,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -436,15 +438,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 2
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 72
   m_ReferenceResolution: {x: 480, y: 800}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 0
-  m_FallbackScreenDPI: 72
-  m_DefaultSpriteDPI: 72
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
 --- !u!114 &1138672287688642432
@@ -513,6 +515,20 @@ MonoBehaviour:
   m_fillImages:
   - {fileID: 1138672288201255156}
   - {fileID: 1138672288983620782}
+--- !u!114 &7391809054687317887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138672287688642435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c510a38c75dc3f719bd5ae06c10bb107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallbackDPI: 72
+  Scale: 1.35
 --- !u!1 &1138672287691441497
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +651,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &8934799918626714175
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -652,7 +668,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1138672287797171537
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class PlayerControllerSelectionManager : MonoBehaviour
     public GameObject StandaloneVer;
     public GameObject MobileVer;
 
+    public bool UsePlatformAPI = true;
+
     private GameObject m_current;
 
     [ContextMenu("Make AI controllable")]
@@ -22,7 +24,7 @@ public class PlayerControllerSelectionManager : MonoBehaviour
         #if UNITY_ANDROID
         prefab = MobileVer;
         #else
-        prefab = PlatofrmUtility.CheckIfIsAnTablet() ? MobileVer : StandaloneVer;
+        prefab = (UsePlatformAPI ? PlatofrmUtility.CheckIfIsAnTablet() : Application.isMobilePlatform) ? MobileVer : StandaloneVer;
         #endif
 
         m_current = Instantiate(prefab, transform, false);
