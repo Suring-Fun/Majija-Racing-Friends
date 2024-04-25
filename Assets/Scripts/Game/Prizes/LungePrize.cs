@@ -31,7 +31,7 @@ public class LungePrize : IPrize
     private Transform m_car;
     private Movenment m_moveable;
     private ShockableCar m_shockable;
-
+    private SafeEffect m_safeEffect;
     private GameObject m_audioInstance;
 
     private float m_audioLifeTime;
@@ -44,6 +44,7 @@ public class LungePrize : IPrize
         m_car = car;
         m_moveable = car.GetComponent<Movenment>();
         m_shockable = car.GetComponent<ShockableCar>();
+        m_safeEffect = m_car.GetComponent<SafeEffect>();
 
         m_iconPerCount = icons;
         m_amountPerSecond = 1f / duration;
@@ -77,6 +78,7 @@ public class LungePrize : IPrize
         m_globalDirection.Normalize();
 
         m_shockable.AbortShocking();
+        m_safeEffect.AbortSafeEffect();
         // m_angleFrom = rigidbody.rotation;
         // m_angleTo = Mathf.Atan2(-m_globalDirection.x, m_globalDirection.y) * Mathf.Rad2Deg;
         // m_angleTo = Mathf.LerpAngle(m_angleFrom, m_angleTo, Vector2.Dot(m_car.up, m_globalDirection));

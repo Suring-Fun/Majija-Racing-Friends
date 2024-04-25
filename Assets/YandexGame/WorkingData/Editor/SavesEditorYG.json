@@ -1,9 +1,9 @@
 {
-    "idSave": 23,
+    "idSave": 34,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "currentPlayerLevel": 1,
+    "currentPlayerLevel": 0,
     "EnableMusic": true,
     "EnableSound": true,
     "EnableHelp": false

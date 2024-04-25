@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class ShockableCar : MonoBehaviour
@@ -33,6 +34,9 @@ public class ShockableCar : MonoBehaviour
     [field: SerializeField]
     public float ShockPitchRange { get; private set; } = 0.1f;
 
+    [field: SerializeField]
+    public string HitReceiverName { get; private set; } = "ToGetHit";
+
     private int m_shocks = 0;
 
     public int IgnoreCollisionShocks
@@ -67,14 +71,24 @@ public class ShockableCar : MonoBehaviour
     [field: SerializeField]
     public float TurnOffColliderTime { get; private set; } = 0.5f;
 
-    private Collider2D m_collider;
+    [field: SerializeField]
+    private ColliderEnableProxy[] m_colliderProxies;
+
+    private ColliderEnableProxy.Lock[] m_colliderLocks;
+
+    private void UpdateColliderEnableStatus(bool colliderEnabled)
+    {
+        for (int x = 0; x < m_colliderLocks.Length; ++x)
+            m_colliderLocks[x].Enabled = colliderEnabled;
+    }
+
     private int m_ignoreCollisionShocks;
     public event System.Action<ShockableCar> IgnoreCollisionShocksChanged;
 
     private void Awake()
     {
         m_movenmnt = GetComponent<Movenment>();
-        m_collider = GetComponent<Collider2D>();
+        m_colliderLocks = m_colliderProxies.Select(x => x.CreateLock()).ToArray();
 
     }
 
@@ -86,7 +100,6 @@ public class ShockableCar : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
-
         Vector2 normal = default;
 
         for (int x = 0; x < collision2D.contactCount; ++x)
@@ -140,7 +153,8 @@ public class ShockableCar : MonoBehaviour
         if (m_shocks >= ShockLimit)
             GetComponent<RescueableCar>().RunRescueProgram(m_movenmnt.FetchTrackingData());
 
-        if (ShockAudio) {
+        if (ShockAudio)
+        {
             ShockAudio.pitch = Random.Range(1f - ShockPitchRange, 1f + ShockPitchRange);
             ShockAudio.Play();
         }
@@ -153,7 +167,7 @@ public class ShockableCar : MonoBehaviour
             Graphics.localEulerAngles = default;
             m_shocked = false;
             m_movenmnt.FreeFly--;
-            m_collider.enabled = true;
+            UpdateColliderEnableStatus(true);
             GetComponent<RescueableCar>().Run180RescueProgramIfRequired();
             m_shocks = 0;
         }
@@ -164,7 +178,7 @@ public class ShockableCar : MonoBehaviour
         if (m_shocked)
         {
             m_timePassed += Time.deltaTime;
-            m_collider.enabled = m_timePassed > TurnOffColliderTime;
+            UpdateColliderEnableStatus(m_timePassed > TurnOffColliderTime);
             if (m_timePassed < ShockTime)
             {
                 float time01 = m_timePassed / ShockTime;
@@ -187,7 +201,7 @@ public class ShockableCar : MonoBehaviour
                 m_movenmnt.FreeFly--;
                 m_movenmnt.ResetAllSpeeds();
 
-                m_collider.enabled = true;
+                UpdateColliderEnableStatus(true);
 
                 GetComponent<RescueableCar>().Run180RescueProgramIfRequired();
                 m_shocks = 0;

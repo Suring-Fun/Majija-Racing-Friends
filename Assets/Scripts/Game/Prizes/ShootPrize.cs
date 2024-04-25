@@ -42,7 +42,7 @@ public class ShootPrize : IPrize
     {
         //direction = SelectDirectionAuto(direction);
         var bullet = UnityEngine.Object.Instantiate(BulletPrefab, m_car.position, Quaternion.identity);
-        Physics2D.IgnoreCollision(m_car.GetComponent<Collider2D>(), bullet.GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(m_car.GetComponent<CarColliderHub>().ToGetOrTakeHit, bullet.GetComponent<Collider2D>());
         bullet.Init(
             (m_car.up * direction.y + m_car.right * direction.x).normalized,
             m_movenment.Rigidbody2D.velocity,

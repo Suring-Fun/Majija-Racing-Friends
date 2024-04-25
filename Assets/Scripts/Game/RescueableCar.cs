@@ -207,6 +207,7 @@ public class RescueableCar : MonoBehaviour
 
         m_isSwimming = false;
         m_rescuing = false;
+        GetComponent<SafeEffect>().RunSafeEffect();
 
 
         if (m_cum)

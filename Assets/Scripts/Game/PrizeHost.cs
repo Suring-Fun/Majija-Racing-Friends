@@ -44,6 +44,10 @@ public class PrizeHost : MonoBehaviour
     void OnTriggerStay2D(Collider2D c)
     {
         var prize = c.GetComponent<PrizeBody>();
+        
+        if (!prize)
+            return;
+
         var p = prize.TryUse(transform);
 
         bool mainPrizeIsReplaceable = MainPrizeIsReplaceable;

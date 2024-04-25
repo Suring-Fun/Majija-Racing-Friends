@@ -5302,7 +5302,7 @@ GameObject:
   - component: {fileID: 8832230119812865389}
   - component: {fileID: 9139312019391756719}
   - component: {fileID: 5911991168605216296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AutoBullet
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

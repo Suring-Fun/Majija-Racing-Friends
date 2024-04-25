@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 5842491239124625630}
   - component: {fileID: 5842491239124625631}
   - component: {fileID: 5842491239124625617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prize
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -27,7 +27,7 @@ public class SpeedUpPrize : IPrize
     public event Action<IPrize> PrizeChanged;
 
     private Transform m_car;
-    private ShockableCar m_shockable;
+    //private ShockableCar m_shockable;
 
     private GameObject m_audioPrefab;
 
@@ -44,8 +44,6 @@ public class SpeedUpPrize : IPrize
 
         AmountDecreaseSpeed = amountDecrease01PerSecond;
         
-        m_shockable = car.GetComponent<ShockableCar>();
-
         m_audioPrefab = audioPrefab;
         m_audioLivetime = audioPrefabLiveTime;
     }
@@ -58,12 +56,16 @@ public class SpeedUpPrize : IPrize
         IsApplyable = false;
         IsReplaceable = false;
 
-        m_shockable.AbortShocking();
         var movenment = m_car.GetComponent<Movenment>();
         var shockable = m_car.GetComponent<ShockableCar>();
+        var safeEffect = m_car.GetComponent<SafeEffect>();
+
+        shockable.AbortShocking();
+        safeEffect.AbortSafeEffect();
 
         var multSpeedUndoAction = movenment.MultSpeed(MoveMultFactor, RotateMultFactor, EnginePowerMultFactor);
         shockable.IgnoreCollisionShocks++;
+
 
         m_undoAction = () =>
         {

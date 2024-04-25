@@ -206,6 +206,9 @@ GameObject:
   - component: {fileID: 891383469467520466}
   - component: {fileID: 2728841761011791688}
   - component: {fileID: 5333721639745980072}
+  - component: {fileID: 1815481183854973910}
+  - component: {fileID: 5309141540447939175}
+  - component: {fileID: 2665271002781933075}
   m_Layer: 0
   m_Name: RunningEnemy
   m_TagString: Untagged
@@ -377,8 +380,11 @@ MonoBehaviour:
   <ShockLimit>k__BackingField: 2
   <ShockAudio>k__BackingField: {fileID: 970199952785692749}
   <ShockPitchRange>k__BackingField: 0.1
+  <HitReceiverName>k__BackingField: ToGetHit
   ShockWithTagWhenIgnoreShocks: Animal
   <TurnOffColliderTime>k__BackingField: 0.5
+  m_colliderProxies:
+  - {fileID: 2665271002781933075}
 --- !u!114 &2728841761011791688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +413,45 @@ MonoBehaviour:
   AddRoadRadius: 0
   RoadRadiusMult: 1
   ReverseAngle: 0
+--- !u!114 &1815481183854973910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891383469467520485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046d6d6bc5d14eaedb56c79bdaa89584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5309141540447939175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891383469467520485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9852cd8b9fb720ab54f35c2be4dcc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DefaultSafeDuration>k__BackingField: 5
+  <BlinkDuration>k__BackingField: 0.05
+  <DefenselessProxy>k__BackingField: {fileID: 2665271002781933075}
+--- !u!114 &2665271002781933075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891383469467520485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f853af81f11730f9c1f310401cb8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &891383469684071248
 GameObject:
   m_ObjectHideFlags: 0

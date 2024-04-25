@@ -30,7 +30,7 @@ public class AutoBullet : MonoBehaviour
 
     public void Init(Transform myCar)
     {
-        Physics2D.IgnoreCollision(myCar.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(myCar.GetComponent<CarColliderHub>().ToGetOrTakeHit, GetComponent<Collider2D>());
         var cars = FindObjectsOfType<Movenment>().Select(x => x.GetComponent<Transform>()).Where(t => t != myCar).ToArray();
 
         float d = float.PositiveInfinity;

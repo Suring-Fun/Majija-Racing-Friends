@@ -47,7 +47,10 @@ public class GameStartCondition : MonoBehaviour
             }
 
             foreach (var car in cars)
+            {
                 car.FreeFly--;
+                car.GetComponent<SafeEffect>().RunSafeEffect();
+            }
 
             GameStarted?.Invoke();
             LabelChanged?.Invoke(GoString, false);
