@@ -11,7 +11,7 @@ public class GraphicsBlinker : MonoBehaviour
 
     private SpriteRenderer[] m_spriteRenderers;
 
-    void Awake()
+    void Start()
     {
         m_spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
