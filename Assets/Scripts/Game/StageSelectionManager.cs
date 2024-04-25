@@ -9,6 +9,7 @@ public class StageSelectionManager : MonoBehaviour
     [field: SerializeField] public Image StageCoverContainer { get; private set; }
 
     [field: SerializeField] public Text StageLabelContainer { get; private set; }
+    [field: SerializeField] public Text StageLabelShadowContainer { get; private set; }
 
 
     [field: SerializeField] public Image CharContainer { get; private set; }
@@ -25,6 +26,7 @@ public class StageSelectionManager : MonoBehaviour
         foreach (var button in m_buttons)
         {
             button.Clicked += SelectButton;
+            button.UpdateStatusWithLevel(PlayerProgress.Main.PlayerLevel);
         }
 
         SelectButton(m_buttons[Mathf.Clamp(PlayerProgress.Main.PlayerLevel, 0, m_buttons.Length - 1)]);
@@ -39,6 +41,7 @@ public class StageSelectionManager : MonoBehaviour
         Info = stageInfo;
         m_currentCoverAnimation = stageInfo.CoverAnimation;
         StageLabelContainer.text = stageInfo.StageName;
+        StageLabelShadowContainer.text = stageInfo.StageName;
 
         
     }
