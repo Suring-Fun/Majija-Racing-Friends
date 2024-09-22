@@ -1,2 +1,0 @@
-Build path: /media/Files/Projects/Mine/Unity/CarsProto_Movenment/Build/WebGL/YGameV1.1
-Build number: 30

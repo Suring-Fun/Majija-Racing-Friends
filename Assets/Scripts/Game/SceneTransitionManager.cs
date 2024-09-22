@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using YG;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -53,22 +52,26 @@ public class SceneTransitionManager : MonoBehaviour
 
         if (UsePlatformAPI)
         {
-            bool adIsShowing = false;
+            // We just cuted off the Ad for mobile platform now.
+            // This part is not critical for Gameplay.
+            // TODO: Implement platform ad showing here.
+            Debug.LogWarning("Show ad here!");
+            // bool adIsShowing = false;
 
-            System.Action adShowingHandler = () => adIsShowing = true;
-            YandexGame.onAdNotification += adShowingHandler;
+            // System.Action adShowingHandler = () => adIsShowing = true;
+            // YandexGame.onAdNotification += adShowingHandler;
 
-            System.Action adClosedHandler = null;
-            adClosedHandler = () => adIsShowing = false;
-            YandexGame.CloseFullAdEvent += adClosedHandler;
+            // System.Action adClosedHandler = null;
+            // adClosedHandler = () => adIsShowing = false;
+            // YandexGame.CloseFullAdEvent += adClosedHandler;
 
-            YandexGame.FullscreenShow();
+            // YandexGame.FullscreenShow();
 
-            while (adIsShowing)
-                yield return null;
+            // while (adIsShowing)
+            //     yield return null;
 
-            YandexGame.CloseFullAdEvent -= adClosedHandler;
-            YandexGame.onAdNotification -= adShowingHandler;
+            // YandexGame.CloseFullAdEvent -= adClosedHandler;
+            // YandexGame.onAdNotification -= adShowingHandler;
         }
 
         yield return SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);

@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
 
 public class PlayerSettings : MonoBehaviour
 {
@@ -67,7 +65,7 @@ public class PlayerSettings : MonoBehaviour
 
     public void LoadChanges()
     {
-        var saves = YandexGame.savesData;
+        var saves = SaveStorage.Data;
         EnableMusic = saves.EnableMusic;
         EnableSound = saves.EnableSound;
         EnableHelp = saves.EnableHelp;
@@ -76,11 +74,11 @@ public class PlayerSettings : MonoBehaviour
 
     public void SaveChanges()
     {
-        var saves = YandexGame.savesData;
+        var saves = SaveStorage.Data;
         saves.EnableMusic = EnableMusic;
         saves.EnableSound = EnableSound;
         saves.EnableHelp = EnableHelp;
-        YandexGame.SaveProgress();
+        SaveStorage.Save();
         IsDirty = false;
     }
 

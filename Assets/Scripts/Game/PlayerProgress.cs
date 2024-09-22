@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using YG;
 
 public class PlayerProgress : MonoBehaviour
 {
@@ -19,6 +18,8 @@ public class PlayerProgress : MonoBehaviour
         }
     }
 
+    public bool IsInited => SaveStorage.IsInited;
+
     public event Action<PlayerProgress> ProgressChanged;
 
     public PlayerProgress()
@@ -27,12 +28,12 @@ public class PlayerProgress : MonoBehaviour
     }
 
     public void LoadChanges() {
-        PlayerLevel = YandexGame.savesData.currentPlayerLevel;
+        PlayerLevel = SaveStorage.Data.CurrentPlayerLevel;
     }
 
     public void SaveChanges()
     {
-        YandexGame.savesData.currentPlayerLevel = PlayerLevel;
-        YandexGame.SaveProgress();
+        SaveStorage.Data.CurrentPlayerLevel = PlayerLevel;
+        SaveStorage.Save();
     }
 }

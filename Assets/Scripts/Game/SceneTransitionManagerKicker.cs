@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using YG;
 
 public class SceneTransitionManagerKicker : MonoBehaviour
 {
@@ -14,9 +13,10 @@ public class SceneTransitionManagerKicker : MonoBehaviour
     {
         if (UsePlatformAPI)
         {
-            while (!YandexGame.SDKEnabled)
+            while (!SaveStorage.IsInited)
                 yield return null;
 
+            SaveStorage.Load();
             PlayerProgress.Main.LoadChanges();
             PlayerSettings.Instance.LoadChanges();
         }
